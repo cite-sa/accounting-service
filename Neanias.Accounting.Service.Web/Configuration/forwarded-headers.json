@@ -1,0 +1,12 @@
+{
+	"ForwardedHeaders": {
+		"Enable": true,
+		"ForwardedHeaders": "All",
+		"ForwardedForHeaderName": null,
+		"ForwardedProtoHeaderName": null,
+		"ForwardedHostHeaderName": null,
+		"ForwardLimit": 1,
+		"KnownProxies": [],
+		"KnownNetworks": []
+	}
+}

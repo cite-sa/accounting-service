@@ -1,0 +1,123 @@
+<div *ngIf="formGroup" class="row user-editor" [formGroup]="formGroup">
+	<div class="col-md-12">
+		<mat-card>
+			<mat-card-title *ngIf="isNew">{{'USER-SERVICE.USER-EDITOR.TITLE.NEW' | translate}}</mat-card-title>
+			<mat-card-title *ngIf="!isNew">{{formGroup.get('name').value}}</mat-card-title>
+			<mat-card-content>
+				<form (ngSubmit)="formSubmit()" [formGroup]="formGroup">
+					<div class="row">
+						<mat-tab-group mat-stretch-tabs dynamicHeight class="col-12">
+							<mat-tab label="{{'USER-SERVICE.USER-EDITOR.USER-TAB' | translate}}">
+								<div class="row tab-container">
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.NAME' | translate}}</mat-label>
+										<input matInput type="text" name="user-name" formControlName="name" required>
+										<mat-error *ngIf="formGroup.get('name').hasError('backendError')">{{user.validationErrorModel.getError('Name')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('name').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.ISSUER' | translate}}</mat-label>
+										<input matInput type="text" name="user-issuer" formControlName="issuer" required>
+										<mat-error *ngIf="formGroup.get('issuer').hasError('backendError')">{{user.validationErrorModel.getError('Issuer')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('issuer').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.SUBJECT' | translate}}</mat-label>
+										<input matInput type="text" name="user-subject" formControlName="subject" required>
+										<mat-error *ngIf="formGroup.get('subject').hasError('backendError')">{{user.validationErrorModel.getError('Subject')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('subject').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.TIMEZONE' | translate}}</mat-label>
+										<input matInput autocomplete="nope" [matAutocomplete]="timezoneAuto" type="text" name="timezone" [formControl]="formGroup.get('profile').get('timezone')" required>
+										<mat-error *ngIf="formGroup.get('profile.timezone').hasError('backendError')">{{user.validationErrorModel.getError('Timezone')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('profile.timezone').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+										<mat-autocomplete autoActiveFirstOption #timezoneAuto="matAutocomplete">
+											<mat-option *ngFor="let timezone of filteredTimezones" class="option" [value]="timezone">{{timezone | timezoneInfoDisplay}}</mat-option>
+										</mat-autocomplete>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.CULTURE' | translate}}</mat-label>
+										<input matInput autocomplete="nope" [matAutocomplete]="cultureAuto" type="text" name="culture" [formControl]="formGroup.get('profile').get('culture')" required>
+										<mat-error *ngIf="formGroup.get('profile.culture').hasError('backendError')">{{user.validationErrorModel.getError('Culture')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('profile.culture').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+										<mat-autocomplete autoActiveFirstOption #cultureAuto="matAutocomplete">
+											<mat-option *ngFor="let culture of filteredCultures" [value]="culture.name">{{culture | cultureInfoDisplay}}</mat-option>
+										</mat-autocomplete>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.LANGUAGE' | translate}}</mat-label>
+										<mat-select name="language" [formControl]="formGroup.get('profile').get('language')" required>
+											<mat-option *ngFor="let languageType of languageTypeValues" [value]="languageService.getLanguageValue(languageType)">{{appEnumUtils.toLanguageTypeString(languageType)}}</mat-option>
+										</mat-select>
+										<mat-error *ngIf="formGroup.get('profile.language').hasError('backendError')">{{user.validationErrorModel.getError('Language')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('profile.language').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+									</mat-form-field>
+									<mat-form-field class="col-md-4">
+										<mat-label>{{'USER-SERVICE.USER-EDITOR.FIELDS.EMAIL' | translate}}</mat-label>
+										<input matInput type="email" name="user-email" formControlName="email">
+										<mat-icon matSuffix>email</mat-icon>
+										<mat-error *ngIf="formGroup.get('email').hasError('backendError')">{{user.validationErrorModel.getError('Email')}}</mat-error>
+										<mat-error *ngIf="formGroup.get('email').hasError('email')">{{'COMMONS.VALIDATION.EMAIL' | translate}}</mat-error>
+									</mat-form-field>
+								</div>
+
+							</mat-tab>
+							<mat-tab label="{{'USER-SERVICE.USER-EDITOR.ROLES-TAB' | translate}}">
+								<div class="row">
+									<table  class="col-12 table serviceUsers-table-container">
+										<thead>
+											<tr>
+												<th>{{'USER-SERVICE.USER-EDITOR.FIELDS.SERVICE' | translate}}</th>
+												<th>{{'USER-SERVICE.USER-EDITOR.FIELDS.ROLE' | translate}}</th>
+												<th *ngIf="canEdit" class="column-actions-header">{{'USER-SERVICE.USER-EDITOR.FIELDS.ACTIONS' | translate}}</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr *ngFor="let serviceUserFormGroup of formGroup.get('serviceUsers')['controls']; let i = index">
+												<td>
+													<mat-form-field class="col-md-12" floatLabel="never">
+														<app-single-auto-complete placeholder="{{'USER-SERVICE.USER-EDITOR.FIELDS.SERVICE' | translate}}" [formControl]="serviceUserFormGroup.get('service')" [configuration]="singleServiceAutocompleteConfiguration">
+														</app-single-auto-complete>
+														<mat-error *ngIf="serviceUserFormGroup.get('service').hasError('backendError')">{{serviceUserFormGroup.get('service').getError('backendError')?.message}}</mat-error>
+														<mat-error *ngIf="serviceUserFormGroup.get('service').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+													</mat-form-field>
+												</td>
+												<td>
+													<mat-form-field class="col-md-12" floatLabel="never">
+														<app-single-auto-complete placeholder="{{'USER-SERVICE.USER-EDITOR.FIELDS.ROLE' | translate}}" [formControl]="serviceUserFormGroup.get('role')" [configuration]="singleUserRoleAutocompleteConfiguration">
+														</app-single-auto-complete>
+														<mat-error *ngIf="serviceUserFormGroup.get('role').hasError('backendError')">{{serviceUserFormGroup.get('role').getError('backendError')?.message}}</mat-error>
+														<mat-error *ngIf="serviceUserFormGroup.get('role').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+													</mat-form-field>
+												</td>
+
+												<td *ngIf="canEdit" class="column-actions">
+													<button mat-icon-button type="button" (click)="removeServiceUserAt(i)">
+														<mat-icon>delete</mat-icon>
+													</button>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<button mat-icon-button type="button" (click)="addServiceUserItem()">
+									<mat-icon>add</mat-icon>
+								</button>
+							</mat-tab>
+						</mat-tab-group>
+					</div>
+					<div class="row editor-actions">
+						<div class="col"></div>
+						<div class="col-auto" *ngIf="this.canEdit && !isDeleted"><button mat-raised-button color="primary" (click)="save()"
+								type="submit">{{'USER-SERVICE.USER-EDITOR.ACTIONS.SAVE' | translate}}</button></div>
+						<div class="col-auto" *ngIf="this.canDelete && !isDeleted && !isNew"><button mat-raised-button color="primary"
+								type="button" (click)="delete()">{{'USER-SERVICE.USER-EDITOR.ACTIONS.DELETE' | translate}}</button></div>
+						<div class="col-auto"><button mat-raised-button color="primary" (click)="cancel()"
+								type="button">{{'USER-SERVICE.USER-EDITOR.ACTIONS.CANCEL' | translate}}</button></div>
+					</div>
+				</form>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

@@ -1,0 +1,30 @@
+{
+	"ApiKey": {
+		"Resolver": {
+			"Middleware": {
+				"APIKeyHeader": "x-api-key",
+				"AuthorizationHeader": "Authorization"
+			},
+			"TokenService": {
+				"GrantType": "api_key",
+				"ClientId": "%{APIKeyClientId}%",
+				"Scope": "%{TheAPIId}%",
+				"ClientSecret": "%{APIKeyClientSecret}%",
+				"IdpUrl": "%{IdpUrl}%",
+				"RequireHttps": "%{IdpRequireHttps}%"
+			},
+			"Cache": {
+				//GOTCHA: This entry prefix and key pattern is duplicated in cache-invalidation.json. Keep them in sync
+				"AccessTokenCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:ApiKey_Resolver:{tenant}:{key}:v0",
+					//60 minutes in seconds = 3600
+					"SlidingExpirationSeconds": 3600,
+					//GOTCHA: The cache expiration should generally be smaller than the actual token lifetime
+					//20 hours in seconds = 72000
+					"AbsoluteExpirationSeconds": 72000
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,10 @@
+{
+	"Consent": {
+		"Middleware": {
+			"WhiteListedRequestPath": [
+				"/api/accounting-service/principal/me"
+			],
+			"BlockingConsentName": "x-consent-blocking"
+		}
+	}
+}

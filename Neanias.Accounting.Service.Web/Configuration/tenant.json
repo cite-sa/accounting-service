@@ -1,0 +1,69 @@
+{
+	"Tenant": {
+		"Configuration": {
+			"Service": {
+				"DefaultUserLocaleCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_DefaultUserLocale:{tenant}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				},
+				"SlackBroadcastCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_SlackBroadcast:{tenant}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				},
+				"EmailClientCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_EmailClient:{tenant}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				},
+				"SmsClientCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_SmsClient:{tenant}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				},
+				"NotifierListCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_NotifierList:{tenant}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				}
+			}
+		},
+		"CodeResolver": {
+			"Cache": {
+				"LookupCache": {
+					"Prefix": "%{CacheDisambiguation}%",
+					"KeyPattern": "{prefix}:Tenant_CodeLookup:{key}:{type}:v0",
+					//12 hours in seconds = 43200
+					"SlidingExpirationSeconds": 3600,
+					//24 hours in seconds = 86400
+					"AbsoluteExpirationSeconds": 86400
+				}
+			}
+		},
+		"Middleware": {
+			//GOTCHA: This is the ClientClaimsPrefix defined in the IdentityServer4 Client property. If you change that prefix, you need to update it here too
+			"ClientClaimsPrefix": "client_",
+			"WhiteListedClients": [],
+			"EnforceTrustedTenant": true
+		},
+		"Multitenancy": {
+			"IsMultitenant": false
+		}
+	}
+}

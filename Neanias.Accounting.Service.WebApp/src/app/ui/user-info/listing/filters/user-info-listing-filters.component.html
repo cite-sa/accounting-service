@@ -1,0 +1,28 @@
+<div class="row user-info-listing-filters">
+	<div class="col-12 p-0">
+		<div class="row mb-3">
+			<div class="col-3 align-self-center">
+				<button class="user-info-filters-btn" mat-stroked-button [matMenuTriggerFor]="filtersMenu">
+					<i class="fa fa-2x fa-filter filter-icon"></i>
+					<span>{{'APP.USER-INFO-LISTING.FILTER.SEARCH-FILTER' | translate}}</span>
+					<span class="opened-filters">{{countOpenFilters()}}</span>
+					<i class="material-icons">keyboard_arrow_down</i>
+				</button>
+			</div>
+			<app-text-filter class="col-6 text-filter" [(value)]="filter.like" [disableTransform]="false" (valueChange)="onFilterChange()"></app-text-filter>
+		</div>
+	</div>
+</div>
+<mat-menu #filtersMenu="matMenu">
+	<div class="filters-menu-container">
+		<div class="filters-menu-header col-md-12">
+			<button mat-flat-button class="col-auto mr-2 d-flex justify-content-start" (click)="$event.stopPropagation(); selectAll()">{{'APP.USER-INFO-LISTING.FILTER.ALL-FILTERS' | translate}}</button>
+			<button mat-flat-button class="col-auto mr-2 d-flex justify-content-start" (click)="$event.stopPropagation(); deselectAll() ">{{'APP.USER-INFO-LISTING.FILTER.NO-FILTERS' | translate}}</button>
+		</div>
+		<div class="col-md-12 d-flex flex-row pt-3">
+			<div class="col d-flex flex-column">
+				<!-- <mat-checkbox class="filter-option" [(ngModel)]="filterSelections['likeOption']" (ngModelChange)="checkBoxChanged($event, 'like')" (click)="$event.stopPropagation()">{{'APP.USER-INFO-LISTING.FILTER.LIKE' | translate}}</mat-checkbox> -->
+			</div>
+		</div>
+	</div>
+</mat-menu>

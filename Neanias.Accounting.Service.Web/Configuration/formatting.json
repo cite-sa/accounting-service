@@ -1,0 +1,21 @@
+{
+	"Formatting": {
+		"Options": {
+			"IntegerFormat": null,
+			"DecimalDigitsRound": 2,
+			"DecimalFormat": null,
+			"DateTimeFormat": null,
+			"TimeSpanFormat": null
+		},
+		"Cache": {
+			"UserProfileCache": {
+				"Prefix": "%{CacheDisambiguation}%",
+				"KeyPattern": "{prefix}:Formatting_UserProfile:{tenant}:{key}:v0",
+				//30 minutes in seconds = 1800
+				"SlidingExpirationSeconds": 1800,
+				//24 hours in seconds = 86400
+				"AbsoluteExpirationSeconds": 86400
+			}
+		}
+	}
+}

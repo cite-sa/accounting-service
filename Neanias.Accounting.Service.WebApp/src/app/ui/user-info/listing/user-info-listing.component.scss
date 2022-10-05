@@ -1,0 +1,25 @@
+.user-info-listing {
+	padding-top: 1em;
+
+	.mat-fab-bottom-right {
+		top: auto !important;
+		right: 20px !important;
+		bottom: 10px !important;
+		left: auto !important;
+		position: fixed !important;
+	}
+	.mat-fab-file-bottom-right {
+		top: auto !important;
+		right: 100px !important;
+		bottom: 10px !important;
+		left: auto !important;
+		position: fixed !important;
+	}
+	.mat-fab-file-bottom{
+		top: auto !important;
+		right: 170px !important;
+		bottom: 10px !important;
+		left: auto !important;
+		position: fixed !important;
+	}
+}

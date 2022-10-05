@@ -1,0 +1,12 @@
+{
+	"ResetEntryServiceConfig": {
+		"ResetEntryCache": {
+			"Prefix": "5D944DA0-FCD2-4F40-A809-89139CDB99ED",
+			"SlidingExpirationSeconds": 3600,
+			"AbsoluteExpirationSeconds": 86400,
+			"KeyPattern": "{prefix}:{tenantId}:{serviceId}:v0"
+		},
+		"ElasticScrollSeconds": 360,
+		"ElasticResultSize": 100
+	}
+}

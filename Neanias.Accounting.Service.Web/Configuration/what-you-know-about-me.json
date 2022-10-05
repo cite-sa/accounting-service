@@ -1,0 +1,27 @@
+{
+	"WhatYouKnowAboutMe": {
+		"Service": {
+			"Extractor": {
+				//supported tokens are :
+				//* {YEAR} - the year of the creation time of the request
+				//* {MONTH} - the month of the creation time of the request
+				//* {DAY} - the day of the creation time of the request
+				//* {HOUR} - the hour of the creation time of the request
+				//* {MINUTE} - the minute of the creation time of the request
+				//* {SECOND} - the second of the creation time of the request
+				//* {TIE} - tie breaker integer
+				//* {UNIQUE} - unique code
+				"FileNamePattern": "user-data.accounting.{YEAR}-{MONTH}-{DAY}_{HOUR}:{MINUTE}:{SECOND}",
+				//7 days in seconds = 604800
+				"ReportLifetimeSeconds": 604800
+			}
+		},
+		"Task": {
+			"Processing": {
+				"Enable": true,
+				//60 minutes = 3600 seconds
+				"IntervalSeconds": 3600
+			}
+		}
+	}
+}

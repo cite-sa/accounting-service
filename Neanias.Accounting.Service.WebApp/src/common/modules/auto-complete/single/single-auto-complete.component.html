@@ -1,0 +1,43 @@
+<div class="row auto-complete">
+	<mat-chip-list class="col-12" (click)="_onArrowClickedFocus()" #chipList [disabled]="disabled" class="chip-list">
+		<mat-chip *ngIf="value" [removable]="!disabled" class="chip-item">
+			<ng-template #cellTemplate *ngIf="_selectedValueTemplate(value)" [ngTemplateOutlet]="_selectedValueTemplate(value)" [ngTemplateOutletContext]="{
+										item: value
+									}"></ng-template>
+			<div *ngIf="!_selectedValueTemplate(value)">{{_displayFn(value)}}</div>
+		</mat-chip>
+	</mat-chip-list>
+	<input matInput class="col-12" autocomplete="off" [placeholder]="placeholder" [matAutocomplete]="auto" [ngModel]="_inputValue" (ngModelChange)="_inputValueChange($event)" [disabled]="disabled" [hidden]="(value != null && value !== '')" (focus)="_onInputFocus()" [matChipInputFor]="chipList" [matChipInputSeparatorKeyCodes]="separatorKeysCodes" [matChipInputAddOnBlur]="true">
+	<mat-icon *ngIf="!disabled" (click)="_onArrowClickedFocus()" class="align-arrow-right" matSuffix>keyboard_arrow_down</mat-icon>
+	<mat-progress-spinner class="progress-loader" mode="indeterminate" [class.not-loading]="!loading" [diameter]="17"></mat-progress-spinner>
+	<mat-autocomplete #auto="matAutocomplete" [displayWith]="autoCompleteDisplayFn()" (optionSelected)="_optionSelected($event)">
+		<span *ngIf="_groupedItems">
+			<mat-optgroup *ngFor="let group of _groupedItems | async" [label]="group.title">
+				<mat-option *ngFor="let item of group.items" [value]="item" [class.two-line-mat-option]="_subtitleFn(item) && !_optionTemplate(item)">
+					<!-- <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" /> -->
+					<ng-template #cellTemplate *ngIf="_optionTemplate(item)" [ngTemplateOutlet]="_optionTemplate(item)" [ngTemplateOutletContext]="{
+							item: item
+						}"></ng-template>
+					<div *ngIf="!_optionTemplate(item)">
+						<span>{{_titleFn(item)}}</span>
+						<br *ngIf="_subtitleFn(item)">
+						<small *ngIf="_subtitleFn(item)">{{_subtitleFn(item)}}</small>
+					</div>
+				</mat-option>
+			</mat-optgroup>
+		</span>
+		<span *ngIf="!_groupedItems">
+			<mat-option *ngFor="let item of _items | async" [value]="item" [class.two-line-mat-option]="_subtitleFn(item) && !_optionTemplate(item)">
+				<!-- <img style="vertical-align:middle;" aria-hidden src="{{state.flag}}" height="25" /> -->
+				<ng-template #cellTemplate *ngIf="_optionTemplate(item)" [ngTemplateOutlet]="_optionTemplate(item)" [ngTemplateOutletContext]="{
+							item: item
+						}"></ng-template>
+				<div *ngIf="!_optionTemplate(item)">
+					<span *ngIf="!_optionTemplate(item)">{{_titleFn(item)}}</span>
+					<br *ngIf="_subtitleFn(item)">
+					<small *ngIf="_subtitleFn(item)">{{_subtitleFn(item)}}</small>
+				</div>
+			</mat-option>
+		</span>
+	</mat-autocomplete>
+</div>

@@ -1,0 +1,36 @@
+.auto-complete {
+	margin-left: inherit;
+	margin-right: inherit;
+
+	.not-loading {
+		display: none;
+	}
+
+	.chip-item {
+		transition: none;
+		background-color: transparent;
+		padding: 0;
+		box-shadow: none;
+		border-radius: unset;
+	}
+
+	.chip-list {
+		width: 100%;
+	}
+
+	.progress-loader {
+		position: absolute;
+		right: 0;
+	}
+
+	.align-arrow-right {
+		position: absolute;
+		right: 0;
+		vertical-align: middle;
+	}
+}
+
+.two-line-mat-option {
+	height: 3.5em;
+	line-height: 1.2em;
+}

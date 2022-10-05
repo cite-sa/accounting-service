@@ -1,0 +1,10 @@
+{
+	"AccountingService": {
+		"Service": {
+			"Config": {
+				"CalculateBatchSize": 5000,
+				"MaxCalculateResultSize": 50000
+			}
+		}
+	}
+}

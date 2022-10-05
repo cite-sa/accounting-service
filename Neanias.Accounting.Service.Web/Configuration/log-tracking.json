@@ -1,0 +1,16 @@
+{
+	"Tracking": {
+		"Correlation": {
+			"Enable": true,
+			"Level": "Information",
+			"TimestampEnricher": false,
+			"LogTrackingCorrelationId": "TrackingCorrelationId",
+			"LogTrackingContextName": "TrackingContext",
+			"LogTrackingPropertyName": "Scope",
+			"LogTrackingPropertyValue": "3"
+		},
+		"TenantScope": {
+			"LogTenantScopePropertyName": "Tenant"
+		}
+	}
+}

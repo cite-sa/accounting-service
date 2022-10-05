@@ -1,0 +1,120 @@
+{
+	"Permissions": {
+		"Policies": {
+			"EditTenant": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"BrowseTenant": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"DeleteTenant": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//TenantConfiguration
+			"EditTenantConfiguration": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"BrowseTenantConfiguration": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"BrowseTenantConfigurationUserLocale": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"DeleteTenantConfiguration": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//ForgetMe
+			"BrowseForgetMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"EditForgetMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"DeleteForgetMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//WhatYouKnowAboutMe
+			"BrowseWhatYouKnowAboutMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"EditWhatYouKnowAboutMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"DeleteWhatYouKnowAboutMe": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//User
+			"BrowseUser": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"EditUser": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			"DeleteUser": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//User Profile
+			"BrowseUserProfile": {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			},
+			//Deferred
+			"DeferredAffiliation" : {
+				"Roles": [],
+				"Clients": [],
+				"AllowAnonymous": false,
+				"AllowAuthenticated": false
+			}
+		}
+	}
+}

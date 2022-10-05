@@ -1,0 +1,16 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@swimlane/ngx-datatable/index.css';
+@import '~@swimlane/ngx-datatable/themes/material.scss';
+@import '~@swimlane/ngx-datatable/assets/icons.css';
+
+@import '~@mat-datetimepicker/core/datetimepicker/datetimepicker-theme.scss';
+
+@import "~bootstrap/scss/bootstrap";
+
+//Material-Bootstrap configuration
+@import "assets/scss/bootstrap-material";
+
+@import './blue-theme.scss';
+@import './pink-theme.scss';

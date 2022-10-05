@@ -1,0 +1,19 @@
+{
+	"IdpClient": {
+		//Used to autorize invocations to API controllers
+		"ProtectMe": {
+			//The endpoint of the idp
+			"Endpoint": "%{IdpUrl}%",
+			//This should be true if the call need to pass through unsafe network
+			"RequireHttps": "%{IdpRequireHttps}%",
+			//The name of the api as registered in the Idp
+			"ApiResource": "%{TheAPIId}%",
+			//The api secret as defined in the Idp configuration
+			"ApiSecret": "%{TheAPIResourceSecret}%",
+			//Enable caching for access token retrieval from reference token
+			"EnableCaching": true,
+			//The duration of the reference token cache
+			"CacheDurationSeconds": 600
+		}
+	}
+}

@@ -1,0 +1,11 @@
+{
+	"ConnectionStrings": {
+		"AccountingDbContext": "%{DBConnectionString}%"
+	},
+	"Db": {
+		"Provider": {
+			"Provider": "PostgreSQL",
+			"TablePrefix": null
+		}
+	}
+}

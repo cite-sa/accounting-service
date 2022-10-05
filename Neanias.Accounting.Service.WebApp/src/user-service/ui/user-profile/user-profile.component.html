@@ -1,0 +1,21 @@
+<div class="row user-profile-component">
+	<div class="col-md-8 offset-md-2">
+		<mat-card>
+			<mat-card-title>{{authService.getPrincipalName()}}</mat-card-title>
+			<mat-card-content>
+				<mat-tab-group mat-stretch-tabs dynamicHeight [(selectedIndex)]="selectedTabIndex" class="user-profile-component-tabs">
+					<mat-tab label="{{'USER-SERVICE.USER-PROFILE-COMPONENT.TABS.PROFILE' | translate}}">
+						<ng-template matTabContent>
+							<app-user-profile-editor></app-user-profile-editor>
+						</ng-template>
+					</mat-tab>
+					<mat-tab label="{{'USER-SERVICE.USER-PROFILE-COMPONENT.TABS.PERSONAL' | translate}}">
+						<ng-template matTabContent>
+							<app-personal-info-editor></app-personal-info-editor>
+						</ng-template>
+					</mat-tab>
+				</mat-tab-group>
+			</mat-card-content>
+		</mat-card>
+	</div>
+</div>

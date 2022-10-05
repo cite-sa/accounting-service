@@ -1,0 +1,28 @@
+{
+	"AccountingSyncing": {
+		"Task": {
+			"Processing": {
+				"Enable": true,
+				//60 minutes = 3600 seconds
+				"IntervalSeconds": 30,
+				"IntervalSecondsForSync": 30
+			}
+		},
+		"Service": {
+			"Config": {
+				"BatchSize": 500
+			}
+		}
+	},
+	"AccountingReleaseLocks": {
+		"Task": {
+			"Processing": {
+				"Enable": true,
+				//60 minutes = 3600 seconds
+				"IntervalSeconds": 30,
+				"MaxLockSecondsForSync": 30,
+				"MaxLockSecondsForResetEntrySync": 30
+			}
+		}
+	}
+}

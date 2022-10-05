@@ -1,0 +1,17 @@
+{
+	"ForgetMe": {
+		"Service": {
+			"Eraser": {
+				"UserName": "erased",
+				"Contact": "---"
+			}
+		},
+		"Task": {
+			"Processing": {
+				"Enable": true,
+				//60 minutes = 3600 seconds
+				"IntervalSeconds": 3600
+			}
+		}
+	}
+}

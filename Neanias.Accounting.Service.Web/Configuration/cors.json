@@ -1,0 +1,12 @@
+{
+	"CorsPolicy": {
+		"Enable": true,
+		"PolicyName": "AllowWebAppCors",
+		"AllowedOrigin": null,
+		"AllowedMethods": [],
+		"AllowedHeaders": [],
+		"AllowCredentials": true,
+		//10 minutes in seconds = 600
+		"PreflightMaxAgeSeconds": 600
+	}
+}

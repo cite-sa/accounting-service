@@ -1,0 +1,9 @@
+{
+	"KeycloakIdentityInfoProviderServiceConfig": {
+		"IdpBaseUtrl": "%{UserResolveIdpBaseUrl}%",
+		"Realm": "%{UserResolveIdpRealm}%",
+		"ClientId": "%{UserResolveIdpClientId}%",
+		"ClientSecret": "%{UserResolveIdpClientSecret}%",
+		"Issuer": "%{UserResolveIdpIssuer}%"
+	}
+}

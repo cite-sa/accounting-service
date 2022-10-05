@@ -1,0 +1,40 @@
+{
+	"AuthorizationContentResolverConfig": {
+		"PrincipalAffiliatedServicesCache": {
+			"Prefix": "4B40B669-BC85-4A4F-AB24-0BBBA94FE6D9",
+			"AbsoluteExpirationSeconds": 60,
+			"KeyPattern": "{prefix}:{tenantId}:{userId}:{permissions}:v0"
+		},
+		"PrincipalAffiliatedServiceCodesCache": {
+			"Prefix": "BB6609E8-8267-4DA3-8A59-1B544D995ACF",
+			"AbsoluteExpirationSeconds": 60,
+			"KeyPattern": "{prefix}:{tenantId}:{userId}:{permissions}:v0"
+		},
+		"AffiliationCache": {
+			"Prefix": "4DCC3458-D7DA-4E63-8258-BBA9244042FE",
+			"AbsoluteExpirationSeconds": 60,
+			"KeyPattern": "{prefix}:{tenantId}:{userId}:{entityType}:{entityId}:v0"
+		}
+	},
+	"UserRolePermissionMappingServiceConfig": {
+		"UserRolessCache": {
+			"Prefix": "C45D8E96-7146-42CB-B938-5ED7AEF2F956",
+			"AbsoluteExpirationSeconds": 300,
+			"KeyPattern": "{prefix}:{tenantId}:v0"
+		}
+	},
+	"UserInjectMiddlewareConfig": {
+		"UsersCache": {
+			"Prefix": "B18F6016-DA0B-41A6-A675-FB742454D8D7",
+			"AbsoluteExpirationSeconds": 60,
+			"KeyPattern": "{prefix}:{tenantId}:{subjectId}:{issuer}:v0"
+		}
+	},
+	"UserResolverCacheConfig": {
+		"UsersCache": {
+			"Prefix": "0B5CF20E-309B-4606-8A31-5C019C248A2C",
+			"AbsoluteExpirationSeconds": 60,
+			"KeyPattern": "{prefix}:{key}:v0"
+		}
+	}
+}

@@ -1,0 +1,80 @@
+{
+	"ErrorThesaurus": {
+		"HashConflict": {
+			"Code": 100,
+			"Message": "there is a hash conflict for the item modifed. please reload to get the latest changes"
+		},
+		"Forbidden": {
+			"Code": 101,
+			"Message": "insufficient rights"
+		},
+		"SystemError": {
+			"Code": 102,
+			"Message": "an unexpected system error occured"
+		},
+		"MissingTenant": {
+			"Code": 103,
+			"Message": "tenant scope not provided"
+		},
+		"InvalidApiKey": {
+			"Code": 104,
+			"Message": "provided APIKey not valid"
+		},
+		"StaleAPIKey": {
+			"Code": 105,
+			"Message": "there was a problem authorizing you with your API key. Please try again. Contact the system administrator if the problem persists"
+		},
+		"ModelValidation": {
+			"Code": 106,
+			"Message": null
+		},
+		"SensitiveInfo": {
+			"Code": 107,
+			"Message": "you are attempting to access sensitive information. please don't do that"
+		},
+		"NonPersonPrincipal": {
+			"Code": 108,
+			"Message": "the operation is available only to person users"
+		},
+		"BlockingConsent": {
+			"Code": 113,
+			"Message": "user consents are not sufficient to complete the operation"
+		},
+		"WhatYouKnowAboutMeIncompatibleState": {
+			"Code": 114,
+			"Message": "the what you know about me request is in incompatible state with respect to the action"
+		},
+		"SingleTenantConfigurationPerTypeSupported": {
+			"Code": 116,
+			"Message": "a single tenant configuration entry per config type is supported"
+		},
+		"IncompatibleTenantConfigurationTypes": {
+			"Code": 117,
+			"Message": "the provided tenant configuration type is incompatible"
+		},
+		"MissingTotpToken": {
+			"Code": 118,
+			"Message": "totp token not provided"
+		},
+		"CycleDetected": {
+			"Code": 119,
+			"Message": "there is a cycle"
+		},
+		"ActionNotSupported": {
+			"Code": 120,
+			"Message": "create not supported"
+		},
+		"CodeShouldBeUnique": {
+			"Code": 120,
+			"Message": "code should be unique"
+		},
+		"ServiceSyncIsNotAvailable": {
+			"Code": 121,
+			"Message": "service sync is not available"
+		},
+		"MaxCalculateResultLimit": {
+			"Code": 122,
+			"Message": "too many data for calculate endpoint please use the csv export"
+		}
+	}
+}

@@ -1,0 +1,21 @@
+.multiple-auto-complete {
+	margin-left: inherit;
+	margin-right: inherit;
+
+	.not-loading {
+		display: none;
+	}
+
+	
+	.align-arrow-right {
+		position: absolute;
+		right: 0;
+		vertical-align: middle;
+	}
+
+}
+
+.two-line-mat-option {
+	height: 3.5em;
+	line-height: 1.2em;
+}

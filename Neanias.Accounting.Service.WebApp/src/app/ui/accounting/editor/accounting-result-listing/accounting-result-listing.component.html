@@ -1,0 +1,9 @@
+<div class="row accounting-result-listing">
+	<div class="col-md-12">
+
+		<app-listing [rows]="gridRows" [columns]="gridColumns" [visibleColumns]="visibleColumns" [count]="totalElements"
+		[offset]="currentPageNumber" [limit]="lookup.page.size" [defaultSort]="lookup.order?.items" [externalSorting]="true"
+		 (rowActivated)="onRowActivated($event)" (pageLoad)="onPageLoad($event)" (columnSort)="onColumnSortOverride($event)" (columnsChanged)="onColumnsChanged($event)">
+		</app-listing>
+	</div>
+</div>

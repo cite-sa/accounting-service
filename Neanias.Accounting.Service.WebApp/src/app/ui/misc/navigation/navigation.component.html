@@ -1,0 +1,67 @@
+<mat-toolbar class="navigation-bar row" color="primary">
+	<a class="col-auto app-logo" routerLink="/">
+		<img class="app-logo-image" [src]="themingService.getImage('assets/images/app-logo', '.png')" alt="Neanias">
+	</a>
+	<div class="col-auto" *ngIf="isAuthenticated()">
+		<a mat-button *ngIf="authService.hasPermission(authService.permissionEnum.ViewServicePage) && authService.CanManageAnySevice()" routerLink="services" routerLinkActive="active">{{'APP.NAVIGATION.SERVICES' | translate}}</a>
+		<span *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResourcePage) && authService.CanManageAnySevice()" >|</span>
+		<a mat-button *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResourcePage) && authService.CanManageAnySevice()" routerLink="service-resources" routerLinkActive="active">{{'APP.NAVIGATION.SERVICE-RESOURCES' | translate}}</a>
+		<span *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceActionPage) && authService.CanManageAnySevice()">|</span>
+		<a mat-button *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceActionPage) && authService.CanManageAnySevice()" routerLink="service-actions" routerLinkActive="active">{{'APP.NAVIGATION.SERVICE-ACTIONS' | translate}}</a>
+		<span *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserInfoPage) && authService.CanManageAnySevice()">|</span>
+		<a mat-button *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserInfoPage) && authService.CanManageAnySevice()" routerLink="service-users" routerLinkActive="active">{{'APP.NAVIGATION.USER-INFOS' | translate}}</a>
+		<span *ngIf="authService.hasPermission(authService.permissionEnum.ViewMyAccountingInfoPage) && authService.CanManageAnySevice()">|</span>
+		<a mat-button *ngIf="authService.hasPermission(authService.permissionEnum.ViewMyAccountingInfoPage)" routerLink="my-accounting" routerLinkActive="active">{{'APP.NAVIGATION.MY-ACCOUNTING' | translate}}</a>
+		<span *ngIf="authService.hasPermission(authService.permissionEnum.ViewUsersPage) ||
+						authService.hasPermission(authService.permissionEnum.ViewUserRolePage) ||
+						authService.hasPermission(authService.permissionEnum.ViewServiceSyncPage)||
+						authService.hasPermission(authService.permissionEnum.ViewServiceResetEntrySyncPage)
+		">
+			<span>|</span>
+			<button mat-button [mat-menu-trigger-for]="menu">{{'APP.NAVIGATION.ADMIN-TITLE' | translate}}
+				<mat-icon>keyboard_arrow_down</mat-icon>
+			</button>
+			<mat-menu x-position="before" #menu="matMenu">
+				<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUsersPage)" mat-menu-item routerLink="/users">{{'APP.NAVIGATION.USERS' | translate}}</a>
+				<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserRolePage)" mat-menu-item routerLink="/user-roles">{{'APP.NAVIGATION.USER-ROLES' | translate}}</a>
+				<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceSyncPage)" mat-menu-item routerLink="/service-syncs">{{'APP.NAVIGATION.SERVICE-SYNCS' | translate}}</a>
+				<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResetEntrySyncPage)" mat-menu-item routerLink="/service-reset-entry-syncs">{{'APP.NAVIGATION.SERVICE-RESET-ENTRY-SYNCS' | translate}}</a>
+			</mat-menu>
+		</span>
+		<span *ngIf="this.installationConfigurationService.privacyStatementUrl" >|</span>
+		<a mat-button *ngIf="this.installationConfigurationService.privacyStatementUrl" (click)="goToExternalLink(this.installationConfigurationService.privacyStatementUrl)">{{'APP.NAVIGATION.PRIVACY-STATEMENT' | translate}}</a>
+		<span *ngIf="this.installationConfigurationService.privacyStatementUrl" >|</span>
+		<a mat-button *ngIf="this.installationConfigurationService.termsOfUseUrl" (click)="goToExternalLink(this.installationConfigurationService.termsOfUseUrl)">{{'APP.NAVIGATION.TERMS-OF-USE' | translate}}</a>
+	</div>
+	<div class="col"></div>
+	<!-- <div class="col-auto">
+		<button mat-icon-button [matMenuTriggerFor]="themeMenu">
+			<mat-icon>format_color_fill</mat-icon>
+		</button>
+		<mat-menu #themeMenu="matMenu">
+			<button mat-menu-item (click)="onThemeSelected(themeTypes.Blue)">{{'APP.NAVIGATION.BLUE-THEME' | translate}}</button>
+			<button mat-menu-item (click)="onThemeSelected(themeTypes.Pink)">{{'APP.NAVIGATION.PINK-THEME' | translate}}</button>
+		</mat-menu>
+	</div>
+	<div class="col-auto">
+		<button mat-icon-button [matMenuTriggerFor]="languageMenu">
+			<mat-icon>language</mat-icon>
+		</button>
+		<mat-menu #languageMenu="matMenu">
+			<button mat-menu-item (click)="onLanguageSelected(languageTypes.English)">{{'APP.NAVIGATION.ENGLISH-LANGUAGE' | translate}}</button>
+			<button mat-menu-item (click)="onLanguageSelected(languageTypes.Greek)">{{'APP.NAVIGATION.GREEK-LANGUAGE' | translate}}</button>
+		</mat-menu>
+	</div> -->
+	<div *ngIf="isAuthenticated()" class="col-auto">
+		<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserProfilePage)" mat-button routerLink="/user-profile" [queryParams]="getUserProfileQueryParams()" routerLinkActive="active" class="user-label">
+			{{this.getPrincipalName()}}
+		</a>
+		<span class="user-label" *ngIf="!authService.hasPermission(authService.permissionEnum.ViewUserProfilePage)">{{this.getPrincipalName()}}</span>
+		<button mat-icon-button (click)="logout()">
+			<mat-icon>exit_to_app</mat-icon>
+		</button>
+	</div>
+</mat-toolbar>
+<div *ngIf="progressIndication" class="progress-bar">
+	<mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
+</div>

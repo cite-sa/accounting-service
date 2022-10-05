@@ -1,0 +1,18 @@
+{
+	"HierarchyResolver": {
+		"Service": {
+			"Config": {
+				"ChildsCache": {
+					"Prefix": "07E399B8-2ACD-498D-A175-9FD801198171",
+					"AbsoluteExpirationSeconds": 240,
+					"KeyPattern": "{prefix}:{tenantId}:{itemType}:{itemId}:v0"
+				},
+				"ParentsCache": {
+					"Prefix": "BFC253FA-0DDF-45E6-9289-5145E326ED5F",
+					"AbsoluteExpirationSeconds": 240,
+					"KeyPattern": "{prefix}:{tenantId}:{itemType}:{itemId}:v0"
+				}
+			}
+		}
+	}
+}

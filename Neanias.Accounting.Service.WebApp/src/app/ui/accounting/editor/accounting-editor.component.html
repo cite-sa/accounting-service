@@ -1,0 +1,159 @@
+<div *ngIf="formGroup" class="row accounting-editor">
+	<div class="col-md-8 offset-md-2">
+		<mat-card>
+			<mat-card-title>{{'APP.ACCOUNTING-EDITOR.TITLE.FILTERS' | translate}} </mat-card-title>
+			<mat-card-content>
+				<form (ngSubmit)="formSubmit()" [formGroup]="formGroup">
+					<div>
+						<div class="row">
+							<mat-form-field class="col-md-3">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.AGGREGATE-GROUP-TYPES' | translate}}</mat-label>
+								<mat-select name="accounting-aggregateGroupTypes" [formControl]="formGroup.get('groupBy')" required multiple >
+									<mat-option *ngFor="let disabledAggregateGroupType of disabledAggregateGroupTypeValues" [value]="disabledAggregateGroupType" disabled>{{enumUtils.toAggregateGroupTypeString(disabledAggregateGroupType)}}
+									</mat-option>
+									<mat-option *ngFor="let aggregateGroupType of aggregateGroupTypeValues" [value]="aggregateGroupType">{{enumUtils.toAggregateGroupTypeString(aggregateGroupType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('groupBy').hasError('backendError')">{{formGroup.get('groupBy').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('groupBy').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-3">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.AGGREGATE-TYPES' | translate}}</mat-label>
+								<mat-select name="accounting-aggregateTypes" [formControl]="formGroup.get('aggregateTypes')" required multiple>
+									<mat-option *ngFor="let aggregateType of aggregateTypeValues" [value]="aggregateType">{{enumUtils.toAggregateTypeString(aggregateType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('aggregateTypes').hasError('backendError')">{{formGroup.get('aggregateTypes').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('aggregateTypes').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-3">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.MEASURE' | translate}}</mat-label>
+								<mat-select name="accounting-measure" [formControl]="formGroup.get('measure')" required>
+									<mat-option *ngFor="let measureType of measureTypeValues" [value]="measureType">{{enumUtils.toMeasureTypeString(measureType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('measure').hasError('backendError')">{{formGroup.get('measure').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('measure').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-3">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.DATE-INTERVAL' | translate}}</mat-label>
+								<mat-select name="accounting-dateInterval" [formControl]="formGroup.get('dateInterval')">
+									<mat-option>
+										{{'APP.TYPES.DATE-INTERVAL-TYPE.NONE' | translate}}
+									</mat-option>
+									<mat-option *ngFor="let dateIntervalType of dateIntervalTypeValues" [value]="dateIntervalType">{{enumUtils.toDateIntervalTypeString(dateIntervalType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('dateInterval').hasError('backendError')">{{formGroup.get('dateInterval').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('dateInterval').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+						<div class="row">
+							<mat-form-field class="col-md-3">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.DATE-RANGE' | translate}}</mat-label>
+								<mat-select name="accounting-dateRange" [formControl]="formGroup.get('dateRangeType')" (selectionChange)="dateRangeTypeChanged($event)">
+									<mat-option *ngFor="let dateRangeType of dateRangeTypeValues" [value]="dateRangeType">
+										{{enumUtils.toDateRangeTypeString(dateRangeType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('dateRangeType').hasError('backendError')"> {{formGroup.get('dateRangeType').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('dateRangeType').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}
+								</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4" *ngIf="this.formGroup.get('dateRangeType')?.value === dateRangeTypeEnum.Custom">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.FROM' | translate}}</mat-label>
+								<input matInput [matDatepicker]="fromDatePicker" type="text" name="accounting-from" autocomplete="off" formControlName="from" required>
+								<mat-datepicker-toggle matSuffix [for]="fromDatePicker"></mat-datepicker-toggle>
+								<mat-datepicker #fromDatePicker></mat-datepicker>
+								<mat-error *ngIf="formGroup.get('from').hasError('backendError')">{{formGroup.get('from').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('from').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4" *ngIf="this.formGroup.get('dateRangeType')?.value === dateRangeTypeEnum.Custom">
+								<mat-label>{{'APP.ACCOUNTING-EDITOR.FIELDS.TO' | translate}}</mat-label>
+								<input matInput [matDatepicker]="toDatePicker" type="text" name="accounting-to" autocomplete="off" formControlName="to" required>
+								<mat-datepicker-toggle matSuffix [for]="toDatePicker"></mat-datepicker-toggle>
+								<mat-datepicker #toDatePicker></mat-datepicker>
+								<mat-error *ngIf="formGroup.get('to').hasError('backendError')">{{formGroup.get('from').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('to').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+						<div class="row">
+							<mat-form-field class="col-md-4" *ngIf="this.editorModel.editorMode === accountingEditorModeEnum.User" >
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.SERVICE' | translate}}" formControlName="services" (optionRemoved)="servicesChanged()" (optionSelected)="servicesChanged()" [configuration]="multipleServiceAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('services').hasError('backendError')">{{formGroup.get('services').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('services').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.RESOURCES' | translate}}" formControlName="resources" [configuration]="multipleServiceResourceAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('resources').hasError('backendError')">{{formGroup.get('resources').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('resources').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.ACTIONS' | translate}}" formControlName="actions" [configuration]="multipleServiceActionAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('actions').hasError('backendError')">{{formGroup.get('actions').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('actions').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4" *ngIf="this.editorModel.editorMode === accountingEditorModeEnum.Service">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.USERS' | translate}}" formControlName="users" [configuration]="multipleUserInfoAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('users').hasError('backendError')">{{formGroup.get('actions').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('users').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+
+						<div class="row">
+							<mat-form-field class="col-md-4" *ngIf="this.editorModel.editorMode === accountingEditorModeEnum.User" >
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.EXCLUDED-SERVICE' | translate}}" formControlName="excludedServices" (optionRemoved)="servicesChanged()" (optionSelected)="servicesChanged()" [configuration]="multipleServiceAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('excludedServices').hasError('backendError')">{{formGroup.get('excludedServices').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('excludedServices').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.EXCLUDED-RESOURCES' | translate}}" formControlName="excludedResources" [configuration]="multipleServiceResourceAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('excludedResources').hasError('backendError')">{{formGroup.get('excludedResources').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('excludedResources').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.EXCLUDED-ACTIONS' | translate}}" formControlName="excludedActions" [configuration]="multipleServiceActionAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('excludedActions').hasError('backendError')">{{formGroup.get('excludedActions').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('excludedActions').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4" *ngIf="this.editorModel.editorMode === accountingEditorModeEnum.Service">
+								<app-multiple-auto-complete placeholder="{{'APP.ACCOUNTING-EDITOR.FIELDS.EXCLUDED-USERS' | translate}}" formControlName="excludedUsers" [configuration]="multipleUserInfoAutocompleteConfiguration">
+								</app-multiple-auto-complete>
+								<mat-error *ngIf="formGroup.get('excludedUsers').hasError('backendError')">{{formGroup.get('excludedUsers').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('excludedUsers').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+
+						<div class="row editor-actions">
+							<div class="col"></div>
+							<div class="col-auto" *ngIf="this.canEdit"><button mat-raised-button color="primary" type="button" (click)="reset()">{{'APP.ACCOUNTING-EDITOR.ACTIONS.RESET' | translate}}</button></div>
+							<div class="col-auto" *ngIf="this.canEdit"><button mat-raised-button color="primary" type="button" (click)="downloadAsCsv()">{{'APP.ACCOUNTING-EDITOR.ACTIONS.DOWNLOAD-CSV' | translate}}</button></div>
+							<div class="col-auto" *ngIf="this.canEdit"><button mat-raised-button color="primary" type="submit" (click)="calculate()">{{'APP.ACCOUNTING-EDITOR.ACTIONS.PREVIEW' | translate}}</button></div>
+							<div class="col-auto"><button mat-raised-button color="primary" (click)="cancel()" type="button">{{'APP.EDITOR-ACTIONS.BACK' | translate}}</button></div>
+						</div>
+					</div>
+				</form>
+			</mat-card-content>
+		</mat-card>
+		<mat-card *ngIf="data && dataRequest && data.length > 0 && dataRequest.dateInterval">
+			<mat-card-title>{{'APP.ACCOUNTING-EDITOR.TITLE.CHARTS' | translate}} </mat-card-title>
+			<mat-card-content>
+				<app-accounting-result-chart [data]="data" [editorModel]="dataRequest"></app-accounting-result-chart>
+			</mat-card-content>
+		</mat-card>
+		<mat-card *ngIf="data && dataRequest">
+			<mat-card-title>{{'APP.ACCOUNTING-EDITOR.TITLE.DATA' | translate}} </mat-card-title>
+			<mat-card-content>
+				<app-accounting-result-listing [data]="data" [editorModel]="dataRequest"></app-accounting-result-listing>
+			</mat-card-content>
+		</mat-card>
+
+	</div>
+</div>

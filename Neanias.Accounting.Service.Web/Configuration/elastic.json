@@ -1,0 +1,28 @@
+{
+	"ElasticCertificateConfig": {
+		"Paths": [ "%{ElasticCertificatePath}%" ]
+	},
+	"ElasticConfig": {
+		"UserName": "%{ElasticUserName}%",
+		"Password": "%{ElasticPassword}%",
+		"EnableDebugMode": true,
+		"DisableDirectStreaming": true,
+		"PrettyJson": true,
+		"ConnectionType": 0, //Single = 0, Cloud = 1, Static = 2, Sniffing = 3, Sticky = 4
+		"SingleNodeConnection": {
+			"Uri": "%{ElasticUri}%"
+		},
+
+		"AccountingEntryIndex": {
+			"Name": "%{ElasticAccountingEntryIndex}%"
+		},
+		"UserInfoIndex": {
+			"Name": "%{ElasticUserInfoIndex}%"
+		},
+		"DefaultResultSize": 100,
+		"DefaultScrollSize": 100,
+		"DefaultCollectAllResultSize": 1000,
+		"DefaultScrollSeconds": 120,
+		"DefaultCompositeAggregationResultSize": 100
+	}
+}

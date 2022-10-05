@@ -1,0 +1,13 @@
+.vs/
+Neanias.Accounting.Service.Resources/bin/
+Neanias.Accounting.Service.Resources/obj/
+Neanias.Accounting.Service.Web/bin/
+Neanias.Accounting.Service.Web/obj/
+Neanias.Accounting.Service/bin/
+Neanias.Accounting.Service/obj/
+Neanias.Accounting.Service.Web/logs/
+Neanias.Accounting.Service.Web/Neanias.Accounting.Service.Web.csproj.user
+Neanias.Accounting.Service.Web/Properties/PublishProfiles/
+Neanias.Accounting.Service.WebApp/.vscode/
+Neanias.Accounting.Service.WebApp/dist/
+Neanias.Accounting.Service.WebApp/node_modules/

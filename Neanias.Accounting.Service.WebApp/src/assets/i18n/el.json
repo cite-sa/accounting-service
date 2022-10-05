@@ -1,0 +1,735 @@
+{
+	"APP": {
+		"NAVIGATION": {
+			"TITLE": "Neanias Accounting",
+			"SERVICES": "Υπηρεσίες",
+			"SERVICE-RESOURCES": "Πόροι",
+			"SERVICE-ACTIONS": "Ενέργειες",
+			"SERVICE-SYNCS": "Συγχρονισμοί Υπηρεσιών",
+			"USERS": "Χρήστες",
+			"USER-ROLES": "Ρόλοι Χρηστών",
+			"BLUE-THEME": "Μπλε Θέμα",
+			"PINK-THEME": "Ροζ Θέμα",
+			"ENGLISH-LANGUAGE": "Αγγλικά",
+			"GREEK-LANGUAGE": "Ελληνικά",
+			"PRIVACY-STATEMENT": "Δήλωση προστασίας προσωπικών δεδομένων",
+			"TERMS-OF-USE": "Οροι χρήσης",
+			"ADMIN-TITLE": "Διαχείριση"
+		},
+		"HOME-COMPONENT": {
+			"TITLE": "Καλωσορίσατε στο Neanias Accounting"
+		},
+		"TENANT-COMPONENT": {
+			"MESSAGE": {
+				"NOT-FOUND": "Η εταιρία δεν βρέθηκε"
+			}
+		},
+		"SERVICE-LISTING": {
+			"TITLE": "Υπηρεσίες",
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"DESCRIPTION": "Περιγραφή",
+				"PARENT": "Γονέας",
+				"CREATED-AT": "Δημιουργία"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"SERVICE-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέο Υπηρεσία"
+			},
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"DESCRIPTION": "Περιγραφή",
+				"LAST-SYNC-AT": "Τελευταίος Συγχρονισμός",
+				"PARENT": "Γονέας"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"ACCOUNTING": "Λογιστικά δεδομένα",
+				"SYNC-NOW": "Συγχρονισμός",
+				"DELETE": "Διαγραφή"
+			},
+			"CONFIRMATION-DIALOG": {
+				"SYNC-ITEM": "Συγχρονισμός της υπηρεσίας ?",
+				"ACTIONS": {
+					"CONFIRMATION": "Επιβεβαίωση",
+					"CANCELATION": "Ακύρωση",
+					"CONFIRM": "Ναι",
+					"CANCEL": "Όχι"
+				}
+			}
+		},
+		"SERVICE-MANAGEMENT-EDITOR": {
+			"TITLE": {
+				"CREATE-DUMMY-DATA": "Δημιουργία Εικονικών Δεδομένων",
+				"MANAGE": "Διαχείριση"
+			},
+			"FIELDS": {
+				"COUNT": "Πλήθος",
+				"FROM": "Από",
+				"TO": "Έως",
+				"MEASURE": "Μέτρηση",
+				"RESOURCE-CODE-PREFIX": "Πρόθεμα Πόρων",
+				"RESOURCE-MAX-VALUE": "Μέγιστη Τιμή Πόρων",
+				"ACTION-CODE-PREFIX": "Πρόθεμα Ενεργειών",
+				"ACTION-MAX-VALUE": "Μέγιστη Τιμή Ενεργειών",
+				"USER-ID-PREFIX": "Πρόθεμα Χρηστών",
+				"USER-MAX-VALUE": "Μέγιστη Τιμή Χρηστών",
+				"MIN-VALUE": "Ελάχιστη Τιμή",
+				"MAX-VALUE": "Μέγιστη Τιμή",
+				"LAST-SYNC-AT": "Τελευταίος Συγχρονισμός"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"SYNC-NOW": "Συγχρονισμός",
+				"CLEANUP": "Εκκαθάριση",
+				"CREATE-DUMMY-DATA": "Δημιουργία Εικονικών Δεδομένων",
+				"DELETE": "Διαγραφή"
+			},
+			"CONFIRMATION-DIALOG": {
+				"SYNC-ITEM": "Συγχρονισμός της υπηρεσίας ?",
+				"CLEANUP-ITEM": "Εκκαθάριση της υπηρεσίας ?",
+				"ACTIONS": {
+					"CONFIRMATION": "Επιβεβαίωση",
+					"CANCELATION": "Ακύρωση",
+					"CONFIRM": "Ναι",
+					"CANCEL": "Όχι"
+				}
+			}
+		},
+
+		"ACCOUNTING-EDITOR": {
+			"TITLE": {
+				"FILTERS": "Φίλτρα",
+				"DATA": "Δεδομένα"
+			},
+			"FIELDS": {
+				"FROM": "Από",
+				"TO": "Έως",
+				"AGGREGATE-GROUP-TYPES": "Ομαδοποίηση Κατά",
+				"AGGREGATE-TYPES": "Υπολογισμοί",
+				"SERVICE": "Υπηρεσία",
+				"RESOURCES": "Πόροι",
+				"ACTIONS": "Ενέργειες",
+				"MEASURE": "Μέτρηση"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"RESET": "Επαναφορά",
+				"DOWNLOAD-CSV": "Λήψη CSV",
+				"PREVIEW": "Προεπισκόπηση"
+			}
+		},
+		"SERVICE-RESOURCE-LISTING": {
+			"TITLE": "Πόροι",
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"SERVICE": "Υπηρεσία",
+				"PARENT": "Γονέας",
+				"CREATED-AT": "Δημιουργία"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"SERVICE-RESOURCE-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέος Πόρος"
+			},
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"SERVICE": "Υπηρεσία",
+				"PARENT": "Γονέας"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"DELETE": "Διαγραφή"
+			}
+		},
+		"SERVICE-ACTION-LISTING": {
+			"TITLE": "Ενέργειες",
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"SERVICE": "Υπηρεσία",
+				"PARENT": "Γονέας",
+				"CREATED-AT": "Δημιουργία"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"SERVICE-ACTION-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέος Ενέργεια"
+			},
+			"FIELDS": {
+				"CODE": "Εξωτερικός Κωδικός",
+				"NAME": "Όνομα",
+				"SERVICE": "Υπηρεσία",
+				"PARENT": "Γονέας"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"DELETE": "Διαγραφή"
+			}
+		},
+		"SERVICE-SYNC-LISTING": {
+			"TITLE": "Συγχρονισμοί Υπηρεσιών",
+			"FIELDS": {
+				"SERVICE": "Υπηρεσία",
+				"LAST-SYNC-AT": "Τελευταίος Συγχρονισμός",
+				"STATUS": "Κατάσταση",
+				"CREATED-AT": "Δημιουργία"
+			},
+		"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"SERVICE-SYNC-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέα Υπηρεσία"
+			},
+			"FIELDS": {
+				"SERVICE": "Υπηρεσία",
+				"LAST-SYNC-AT": "Τελευταίος Συγχρονισμός",
+				"STATUS": "Κατάσταση"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"DELETE": "Διαγραφή"
+			}
+		},
+		"USER-ROLE-LISTING": {
+			"TITLE": "Ρόλοι Χρηστών",
+			"FIELDS": {
+				"NAME": "Όνομα",
+				"PROPAGATE": "Κληρονομείται",
+				"CREATED-AT": "Δημιουργία"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"USER-ROLE-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέος Ρόλος Χρήστη"
+			},
+			"FIELDS": {
+				"NAME": "Όνομα",
+				"PROPAGATE": "Κληρονομείται",
+				"RIGHTS": "Δικαιώματα"
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"DELETE": "Διαγραφή"
+			}
+		},
+		"EDITOR-ACTIONS": {
+			"SAVE": "Αποθήκευση",
+			"BACK": "Πίσω",
+			"DELETE": "Διαγραφή"
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Ενεργό",
+				"INACTIVE": "Ανενεργό"
+			},
+			"APP-ROLE": {
+				"ADMIN": "Διαχειριστής",
+				"USER": "Χρήστης"
+			},
+			"LANGUAGE-TYPE": {
+				"ENGLISH": "Αγγλικά",
+				"GREEK": "Ελληνικά"
+			},
+			"PROPAGATE-TYPE": {
+				"YES": "Ναι",
+				"NO": "Οχι"
+			},
+			"SERVICE-SYNC-STATUS": {
+				"PENDING": "Εκκρεμής",
+				"SYNCING": "Συγχρονισμός"
+			},
+			"MEASURE-TYPE": {
+				"TIME": "Χρόνος",
+				"INFORMATION": "Πληροφορία",
+				"THROUGHPUT": "Δεδομένα",
+				"UNIT": "Μονάδα"
+			},
+			"AGGREGATE-TYPE": {
+				"AVERAGE": "Average",
+				"MAX": "Max",
+				"MIN": "Min",
+				"SUM": "Sum"
+			},
+			"AGGREGATE-GROUP-TYPE": {
+				"SERVICE": "Υπηρεσία",
+				"RESOURCE": "Πόρος",
+				"ACTION": "Ενέργεια"
+			}
+		}
+	},
+	"USER-SERVICE": {
+		"USER-PROFILE-COMPONENT": {
+			"TABS": {
+				"PROFILE": "Προφίλ",
+				"PERSONAL": "Προσωπικά"
+			},
+			"PERSONAL": {
+				"NAME": "Όνομα"
+			},
+			"CONTACT-INFO": {
+				"NAME": "Όνομα",
+				"EMAIL": "Email"
+			},
+			"PROFILE": {
+				"TITLE": "Προφίλ",
+				"FIELDS": {
+					"TIMEZONE": "Ζώνη ώρας",
+					"CULTURE": "Culture",
+					"LANGUAGE": "Γλώσσα"
+				}
+			},
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο"
+			}
+		},
+		"USER-LISTING": {
+			"TITLE": "Χρήστες",
+			"FIELDS": {
+				"NAME": "Όνομα",
+				"EMAIL": "E-mail",
+				"SUBJECT": "Εξωτερικό Αναγνωριστικό",
+				"ISSUER": "Εκδότης Αναγνωριστικού",
+				"IS-ACTIVE": "Κατάσταση"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"LIKE": "αναζήτηση...",
+				"ROLES": "Ρόλοι",
+				"IS-ACTIVE": "Κατάσταση",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			}
+		},
+		"USER-EDITOR": {
+			"TITLE": {
+				"NEW": "Νέος Χρήστης"
+			},
+			"FIELDS": {
+				"NAME": "Όνομα",
+				"EMAIL": "E-mail",
+				"TIMEZONE": "Ζώνη ώρας",
+				"CULTURE": "Culture",
+				"LANGUAGE": "Γλώσσα",
+				"ROLES": "Ρόλοι",
+				"SERVICE": "Υπηρεσία",
+				"ROLE": "Ρόλος",
+				"SUBJECT": "Εξωτερικό Αναγνωριστικό",
+				"ISSUER": "Εκδότης Αναγνωριστικού",
+				"ACTIONS": "Ενέργειες"
+			},
+			"ROLES-TAB": "Ρόλοι",
+			"USER-TAB": "Χρήστης",
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο",
+				"DELETE": "Διαγραφή"
+			}
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Ενεργό",
+				"INACTIVE": "Ανενεργό"
+			}
+		}
+	},
+	"IDP-SERVICE": {
+		"TENANT-CONFIGURATION": {
+			"CREDENTIAL-PROVIDERS-EDITOR": {
+				"ACTIONS": {
+					"SAVE": "Αποθήκευση"
+				}
+			}
+		},
+		"USER-CONSENTS": {
+			"TITLE": "Συναινέσεις Χρήστη",
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο"
+			}
+		},
+		"USER-ROLE-ASSIGNMENT": {
+			"TITLE": "Ανάθεση Ρόλων Χρηστών",
+			"UNSAVED-CHANGES": "Υπάρχουν μη αποθηκευμένες αλλαγές",
+			"FIELDS": {
+				"NAME": "Όνομα",
+				"ROLES": "Ρόλοι"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"MORE-FILTERS": "Περισσότερα Φίλτρα",
+				"ROLES": "Ρόλοι",
+				"IS-ACTIVE": "Κατάσταση",
+				"LIKE": "αναζήτηση...",
+				"SHOW-INACTIVE": "Εμφάνιση Διαγραμμένων"
+			},
+			"ACTIONS": {
+				"SAVE-ALL": "Αποθήκευση όλων των αλλαγών",
+				"DISCARD-ALL": "Απόρριψη όλων των αλλαγών"
+			}
+		},
+		"ACCESS-TOKEN-LISTING": {
+			"TITLE": "Access Tokens",
+			"FIELDS": {
+				"USERNAME": "Όνομα χρήστη",
+				"CLIENT": "Client",
+				"TYPE": "Τύπος",
+				"LATEST-EXPIRES-AT": "Τελευταία λήξη",
+				"LATEST-CREATED-AT": "Τελευταία δημιουργία",
+				"COUNT": "Πλήθος",
+				"ACTION": "Ενέργεια"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "ΦΙΛΤΡΑ ΑΝΑΖΗΤΗΣΗΣ",
+				"ALL-FILTERS": "Όλα τα φίλτρα",
+				"NO-FILTERS": "Κανένα φίλτρο",
+				"LIKE": "αναζήτηση..."
+			}
+		},
+		"TOTP-DIALOG-COMPONENT": {
+			"TITLE": "Two Step Verification",
+			"ACTIONS": {
+				"DONE": "Συνέχεια",
+				"CANCEL": "Ακύρωση"
+			}
+		},
+		"AUTHENTICATION": {
+			"TITLES": {
+				"LOGIN": "Σύνδεση",
+				"SUCCESSFUL-REQUEST": "Επιτυχία Υποβολής Αίτησης",
+				"SUCCESSFUL-REQUEST-SUBTITLE": "Η αίτηση σας έχει εστάλει με επιτυχία",
+				"SUCCESSFUL-REQUEST-CHECK-MAIL": "Σας έχουμε αποστείλει ένα email με πληροφορίες σύνδεσης για την ολοκλήρωση της εγγραφής σας. Παρακαλώ ελέγξτε το ηλεκτρονικό σας ταχυδρομείο.",
+				"DIRECT-LINK-LOGIN": "Σύνδεση με Link μιας Χρήσης",
+				"REGISTER": "Ή Εγγραφή",
+				"INVITATION-CODE": "Παρακαλώ εισάγετε τον κωδικό πρόσκλησης",
+				"PROVIDER-SELECTION": "Παρακαλώ επιλέξτε πάροχο αναγνώρισης χρήστη",
+				"REGISTRATION-FIELDS": "Στοιχεία χρήστη",
+				"EXTERNAL-PROVIDERS": "Εξωτερικοί πάροχοι αναγνώρισης χρηστών",
+				"INTERNAL-PROVIDER": "Εσωτερικός πάροχος αναγνώρισης χρηστών",
+				"TENANT-SELECTION": "Παρακαλώ εισάγετε το όνομα της εταιρίας σας",
+				"USER-CONSENTS": "Συναινέσεις Χρήστη",
+				"FAILED-LOGIN": "Αποτυχία Σύνδεσης",
+				"FAILED-LOGIN-SUBTITLE": "Το link που χρησιμοποιείται για να συνδεθείτε έχει λήξει.",
+				"FAILED-LOGIN-CLAIM-MAIL-OTP": "Το link που χρησιμοποιείται για να συνδεθείτε έχει λήξει. Παρακαλώ δημιουργείσται νέο link μιας χρήσης."
+			},
+			"FIELDS": {
+				"INVITATION-CODE": "Κωδικός πρόσκλησης",
+				"USERNAME": "Όνομα χρήστη",
+				"PASSWORD": "Κωδικός πρόσβασης",
+				"EMAIL": "E-mail",
+				"CONFIRM-EMAIL": "Επιβεβαίωση E-mail",
+				"TOTP": "Two Step Authentication Code (εφόσον είναι ενεργοποιημένο)",
+				"CONFIRM-PASSWORD": "Επιβεβαίωση κωδικού πρόσβασης",
+				"TENANT": "Εταιρία"
+			},
+			"ACTIONS": {
+				"LOGIN": "Σύνδεση",
+				"PASSWORD-RESET": "Επαναφορά κωδικού πρόσβασης",
+				"REGISTER": "Εγγραφή",
+				"REGISTER-WITH-INVITATION": "Έχω μια πρόσκληση",
+				"SAML-LOGIN": "Saml",
+				"CAS-LOGIN": "CAS",
+				"NEXT": "Επόμενο",
+				"BACK": "Πίσω",
+				"CONTINUE": "Συνέχεια",
+				"BACK-TO-LOGIN": "Επιστροφή στην Σελίδα Σύνδεσης"
+			},
+			"MESSAGES": {
+				"SIGN-OUT-IN-PROGRESS": "Γίνεται αποσύνδεση...",
+				"TENANT-NOT-FOUND": "Η Εταιρία δεν βρέθηκε"
+			}
+		},
+		"DECLINE-REGISTRATION-INVITATION": {
+			"TITLE": "Λυπούμαστε πολύ!",
+			"SUBTITLE": "Αν υπάρχει συγκεκριμένος λόγος που δεν χρησιμοποιήσατε αυτή την πρόσκληση εγγραφής, παρακαλώ ενημερώστε μας. Ευχαριστούμε πολύ.",
+			"FIELDS": {
+				"TEXT": "Σημειώσεις"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Η πρόσκληση εγγραφής απορρίφθηκε"
+			}
+		},
+		"PASSWORD-RESET": {
+			"TITLE": "Επαναφορά Κωδικού Πρόσβασης",
+			"FIELDS": {
+				"PASSWORD": "Κωδικός πρόσβασης",
+				"PASSWORD-REPEAT": "Επανάληψη κωδικού πρόσβασης"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Επιτυχής επαναφορά κωδικού πρόσβασης"
+			}
+		},
+		"DECLINE-PASSWORD-RESET": {
+			"TITLE": "Λυπούμαστε πολύ!",
+			"SUBTITLE": "θα ερευνήσουμε την αιτία που αυτό το email έφτασε σε εσάς. Αν έχετε οποιαδήποτε πληροφορία, παρακαλώ ενημερώστε μας. Ευχαριστούμε πολύ.",
+			"FIELDS": {
+				"TEXT": "Σημειώσεις"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Η επαναφορά κωδικού απορρίφθηκε"
+			}
+		},
+		"PASSWORD-RESET-POPUP": {
+			"TITLE": "Επαναφορά Κωδικού Πρόσβασης",
+			"INFO": "Ένα μήνυμα ηλεκτρονικού ταχυδρομείου θα σταλεί στην καθορισμένη διεύθυνση με οδηγίες για την επαναφορά του κωδικού πρόσβασης σας.",
+			"FIELDS": {
+				"USERNAME": "Όνομα χρήστη",
+				"EMAIL": "E-mail"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Το μήνυμα ηλεκτρονικού ταχυδρομείου εστάλη. Ο σύνδεσμος επικύρωσης θα παραμείνει έγκυρος μέχρι τις "
+			}
+		},
+		"USER-INVITATION": {
+			"TITLE": "Πρόσκληση Χρηστών",
+			"REQUIRED": "Πρέπει να επιλεγεί τουλάχιστον ένας χρήστης ή e-mail",
+			"FIELDS": {
+				"USERS": "Χρήστες",
+				"EMAILS": "E-mails",
+				"ROLE": "Ρόλος που θα ανατεθεί",
+				"INVITE-EXISTING-USERS": "Πρόσκληση υπαρχόντων χρηστών",
+				"INVITE-NEW-USERS-BY-EMAIL": "Πρόσκληση νέων χρηστών μέσω e-mail"
+			},
+			"ACTIONS": {
+				"ADD-EMAIL": "Προσθήκη e-mail",
+				"SEND-INVITATIONS": "Αποστολή προσκλήσεων"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Τα μηνύματα ηλεκτρονικού ταχυδρομείου εστάλησαν. Ο σύνδεσμος πρόσκλησης θα παραμείνει έγκυρος μέχρι τις "
+			}
+		},
+		"USER-PASS-OVERRIDE-DIALOG": {
+			"TITLE": "Ορισμός Ονόματος Χρήστη / Κωδικού",
+			"FIELDS": {
+				"USERNAME": "Όνομα Χρήστη",
+				"PASSWORD": "Κωδικός",
+				"PASSWORD-REPEAT": "Επανάληψη Κωδικού"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			}
+		},
+		"CONSENTS-GUARD-DIALOG": {
+			"TITLE": "Για να προχωρήσετε πρέπει να αποδεχθείτε τις παρακάτω Συναινέσεις Χρήστη",
+			"ACTIONS": {
+				"SAVE": "Αποθήκευση",
+				"CANCEL": "Άκυρο"
+			}
+		},
+		"USER-CONSENTS-EDITOR": {
+			"CONSENT-AWARENESS": "*Οι Συναινέσεις Χρήστη μπορούν να τροποποιηθούν οποιαδήποτε στιγμή από το Προφίλ του χρήστη."
+		},
+		"SEND-INVITATION-POPUP": {
+			"TITLE": "Πρόσκληση Χρήστη",
+			"FIELDS": {
+				"EMAIL": "E-mail"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Υποβολή"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Το μήνυμα ηλεκτρονικού ταχυδρομείου εστάλη. Ο σύνδεσμος πρόσκλησης θα παραμείνει έγκυρος μέχρι τις "
+			}
+		},
+		"USER-CREDENTIALS": {
+			"COLUMNS": {
+				"PROVIDER": "Πάροχος",
+				"REMOVE": "Ακύρωση"
+			},
+			"ADD-POPUP-TITLE": "Επιτυχία",
+			"ADD-POPUP-MESSAGE": "Μια πρόσκληση έχει σταλεί στο ηλεκτρονικό σας ταχυδρομείο για να συσχετίσετε το χρήστη σας με έναν άλλο πάροχο. Ακολουθήστε τον σύνδεσμο από το email σας.",
+			"ACTIONS": {
+				"ADD-PROVIDER": "Σύνδεση με άλλο πάροχο",
+				"CANCEL": "Άκυρο"
+			}
+		},
+		"TOTP-SETUP": {
+			"ENABLE-TITLE": "Για μεγαλύτερη ασφάλεια μπορείτε να ενεργοποιήσετε το Two Step Authentication",
+			"DISABLE-TITLE": "Το Two Step Authentication είναι ενεργό",
+			"QR-CODE-MESSAGE": "Παρακαλώ σαρώστε το ακόλουθο QR Code χρησιμοποιώντας την εφαρμογή δημιουργίας κώδικών σας",
+			"MANUAL-INPUT": "ή πληκτρολογήστε τον παρακάτω κωδικό",
+			"BACKUP-CODE": "Σημειώστε τον παρακάτω κωδικό, καθώς μπορεί να χρησιμοποιηθεί ως εφεδρικός κωδικός",
+			"VERIFICATION-TITLE": "Εισάγετε έναν κωδικό που δημιουργήθηκε",
+			"CODE": "Κωδικός",
+			"ACTIONS": {
+				"ENABLE": "Ενεργοποίηση",
+				"DISABLE": "Απενεργοποίηση",
+				"NEXT": "Επόμενο",
+				"VERIFY": "Επαλήθευση",
+				"CANCEL": "Άκυρο"
+			}
+		},
+		"TOTP-INPUT": {
+			"PLACEHOLDER": "Two Step Authentication Κωδικός"
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Ενεργό",
+				"INACTIVE": "Ανενεργό"
+			},
+			"CREDENTIAL-PROVIDER": {
+				"SERVICE": "Service",
+				"USER-PASS": "Εσωτερικός λογαριασμός",
+				"GOOGLE": "Google",
+				"FACEBOOK": "Facebook",
+				"TWITTER": "Twitter",
+				"LINKED-IN": "LinkedIn",
+				"GIT-HUB": "GitHub",
+				"SAML": "Saml",
+				"CAS": "CAS",
+				"API-KEY": "API Key",
+				"DIRECT-LINK": "Link μιας Χρήσης",
+				"TRANSIENT": "Παροδικός",
+				"TOTP": "Time-based One-Time Password"
+			}
+		}
+	},
+	"COMMONS": {
+		"CUSTOM-USER-SETTINGS": {
+			"LABEL": "Προφίλ προβολής",
+			"PLACEHOLDER": "Επιλέξτε προφίλ προβολής",
+			"FILTER-NAME": "Ονομα Φίλτρου",
+			"ACTIONS": {
+				"UPDATE-FILTER": "Ενημέρωση τρέχοντος προφίλ προβολής",
+				"SAVE-FILTER-AS": "Δημιουργία νέου προφίλ προβολής",
+				"SETTINGS-LIST-BUTTON": "Αποθηκευμένα προφίλ προβολής",
+				"DELETE": "Διαγραφή του προφίλ προβολής"
+			}
+		},
+		"FILTER-NAME-DIALOG": {
+			"TITLE": "Δημιουργία νέου προφίλ προβολής",
+			"FIELDS": {
+				"FILTER-NAME": "Όνομα νέου προφίλ προβολής"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Αποθήκευση",
+				"CANCEL": "Ακύρωση"
+			}
+		},
+		"LISTING-COMPONENT": {
+			"SETTINGS": {
+				"TITLE": "Ρυθμίσεις",
+				"APPLY": "Εφαρμογή",
+				"CLOSE": "Κλείσιμο"
+			},
+			"MESSAGE": {
+				"EMPTY": "Δεν υπάρχουν δεδομένα προς εμφάνιση",
+				"TOTAL": "Σύνολο",
+				"SELECTED": "Επιλεγμένα"
+			}
+		},
+		"VALIDATION": {
+			"REQUIRED": "Απαιτούμενο πεδίο",
+			"INVALID-JSON": "Μη έγκυρη επιλογή",
+			"EMAIL": "Μη έγκυρο e-mail",
+			"PHONE": "Λανθασμένη μορφή",
+			"PASSWORD-MISMATCH": "Οι κωδικοί πρόσβασης δεν ταιριάζουν",
+			"EMAIL-MISMATCH": "Οι διευθύνσεις e-mail δεν ταιριάζουν"
+		},
+		"CONFIRMATION-DIALOG": {
+			"SEND-INVITATION": "Αποστολή πρόσκλησης;",
+			"DELETE-ITEM": "Διαγραφή αυτού του στοιχείου;",
+			"DELETE-USER-SETTING-PROFILE": "Διαγραφή αυτού του προφίλ προβολής;",
+			"ACTIONS": {
+				"CONFIRMATION": "Επιβεβαίωση",
+				"CANCELATION": "Ακύρωση",
+				"CONFIRM": "Ναι",
+				"CANCEL": "Όχι"
+			}
+		},
+		"PENDING-FORM-CHANGES-DIALOG": {
+			"MESSAGE": "You haven't saved your changes. Are you sure you want to leave this page?",
+			"ACTIONS": {
+				"YES": "Yes",
+				"NO": "No"
+			}
+		},
+		"ACTIONS": {
+			"NEXT": "Επόμενο",
+			"BACK": "Πίσω",
+			"NEW": "Νέο",
+			"CONTINUE": "Συνέχεια"
+		},
+		"TEXT-FILTER": {
+			"LIKE": "αναζήτηση..."
+		},
+		"SNACK-BAR": {
+			"SUCCESSFUL-CREATION": "Επιτυχής δημιουργία",
+			"SUCCESSFUL-UPDATE": "Επιτυχής ενημέρωση",
+			"UNSUCCESSFUL-OPERATION": "Ανεπιτυχής ενέργεια",
+			"SUCCESSFUL-LOGIN": "Επιτυχής σύνδεση",
+			"SUCCESSFUL-REGISTRATION": "Επιτυχής εγγραφή"
+		},
+		"ERRORS": {
+			"DEFAULT": "Παρουσιάστηκε απροσδόκητο σφάλμα"
+		}
+	}
+}

@@ -1,0 +1,15 @@
+<div class="row accounting-result-chart">
+	<h4 *ngIf="hasToManyDataForRender">{{'APP.ACCOUNTING-RESULT-CHART.TITLE.HAS-MANY-DATA' | translate}}</h4>
+	<div  *ngIf="charts" class="col-md-12">
+		<mat-accordion>
+			<mat-expansion-panel *ngFor="let chart of charts" hideToggle>
+				<mat-expansion-panel-header>
+					<mat-panel-title>
+						{{enumUtils.toAggregateTypeString(chart.aggregateType)}}
+					</mat-panel-title>
+				</mat-expansion-panel-header>
+				<app-chart-js [type]="chart.type" [data]="chart.data" [options]="chart.options"></app-chart-js>
+			</mat-expansion-panel>
+		</mat-accordion>
+	</div>
+</div>

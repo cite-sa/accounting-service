@@ -1,0 +1,14 @@
+{
+	"Auditing": {
+		"Enable": true,
+		"EnableIdentityTracking": true,
+		"Level": "Information",
+		"InvokerContextEnricher": true,
+		"PrincipalEnricher": true,
+		"TimestampEnricher": false,
+		"AuditPropertyName": "Scope",
+		"AuditPropertyValue": "1",
+		"IdentityTrackingPropertyName": "Scope",
+		"IdentityTrackingPropertyValue": "2"
+	}
+}
