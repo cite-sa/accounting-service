@@ -21,27 +21,27 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cite.IdentityServer4.TokenClient" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Auth" Version="1.2.1" />
-    <PackageReference Include="Cite.Tools.Cache" Version="1.1.0" />
-    <PackageReference Include="Cite.Tools.Cipher" Version="2.0.0" />
-    <PackageReference Include="Cite.Tools.CodeGenerator" Version="1.1.0" />
-    <PackageReference Include="Cite.Tools.Common" Version="1.1.0" />
-    <PackageReference Include="Cite.Tools.Configuration" Version="1.1.3" />
-    <PackageReference Include="Cite.Tools.Data.Builder" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Censor" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Deleter" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Query" Version="1.2.1" />
-    <PackageReference Include="Cite.Tools.Data.Transaction" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.DI" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Exception" Version="1.1.0" />
-    <PackageReference Include="Cite.Tools.FieldSet" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Http" Version="2.0.1" />
-    <PackageReference Include="Cite.Tools.Json" Version="1.4.0" />
-    <PackageReference Include="Cite.Tools.Logging" Version="1.1.0" />
-    <PackageReference Include="Cite.Tools.Validation" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.CurrentPrincipal" Version="1.1.0" />
-    <PackageReference Include="Cite.WebTools.InvokerContext" Version="1.0.0" />
+	<PackageReference Include="Cite.IdentityServer4.TokenClient" Version="2.0.1" />
+	<PackageReference Include="Cite.Tools.Auth" Version="1.2.1" />
+	<PackageReference Include="Cite.Tools.Cache" Version="1.1.0" />
+	<PackageReference Include="Cite.Tools.Cipher" Version="2.0.0" />
+	<PackageReference Include="Cite.Tools.CodeGenerator" Version="1.1.0" />
+	<PackageReference Include="Cite.Tools.Common" Version="1.1.0" />
+	<PackageReference Include="Cite.Tools.Configuration" Version="1.1.3" />
+	<PackageReference Include="Cite.Tools.Data.Builder" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Censor" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Deleter" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Query" Version="1.2.1" />
+	<PackageReference Include="Cite.Tools.Data.Transaction" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.DI" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Exception" Version="1.1.0" />
+	<PackageReference Include="Cite.Tools.FieldSet" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Http" Version="2.0.1" />
+	<PackageReference Include="Cite.Tools.Json" Version="1.4.0" />
+	<PackageReference Include="Cite.Tools.Logging" Version="1.1.0" />
+	<PackageReference Include="Cite.Tools.Validation" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.CurrentPrincipal" Version="1.1.0" />
+	<PackageReference Include="Cite.WebTools.InvokerContext" Version="1.0.0" />
     <PackageReference Include="CsvHelper" Version="19.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="3.1.22" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />

@@ -12,22 +12,22 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Cite.IdentityServer4.TokenClient.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Cipher.Extensions" Version="2.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Builder.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Censor.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Deleter.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Data.Query.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.Tools.Validation.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.Cors.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.Data.Transaction" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.Exception.Middleware" Version="1.2.0" />
-    <PackageReference Include="Cite.WebTools.FieldSet" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.HostingEnvironment" Version="1.1.0" />
-    <PackageReference Include="Cite.WebTools.Localization.Extensions" Version="1.0.0" />
-    <PackageReference Include="Cite.WebTools.Validation" Version="1.0.0" />
+	<PackageReference Include="Cite.IdentityServer4.TokenClient.Extensions" Version="2.0.1" />
+	<PackageReference Include="Cite.Tools.Cipher.Extensions" Version="2.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Builder.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Censor.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Deleter.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Data.Query.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.Tools.Validation.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.Cors.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.Data.Transaction" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.Exception.Middleware" Version="1.2.0" />
+	<PackageReference Include="Cite.WebTools.FieldSet" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.HostingEnvironment" Version="1.1.0" />
+	<PackageReference Include="Cite.WebTools.Localization.Extensions" Version="1.0.0" />
+	<PackageReference Include="Cite.WebTools.Validation" Version="1.0.0" />
     <PackageReference Include="IdentityModel.AspNetCore.OAuth2Introspection" Version="5.1.0" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.1" />
+	<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="3.1.22" />
 	<PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.1.22" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore" Version="3.1.22" />
 	<PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.22" />
