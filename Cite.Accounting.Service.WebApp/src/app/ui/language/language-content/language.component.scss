@@ -1,0 +1,7 @@
+::ng-deep .languages {
+  box-shadow: none !important;
+}
+
+.lang-toggle:hover {
+  background-color: color-mix(in srgb, var(--sys-on-surface) 4%, transparent);
+}

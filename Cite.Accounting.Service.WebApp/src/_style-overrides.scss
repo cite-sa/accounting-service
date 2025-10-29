@@ -1,0 +1,68 @@
+@mixin _mat-chip-custom-properties($foregroundColor, $backgroundColor){
+    --mdc-chip-disabled-label-text-color: #{$foregroundColor};
+    --mdc-chip-elevated-container-color: #{$backgroundColor};
+    --mdc-chip-elevated-disabled-container-color: #{$backgroundColor};
+    --mdc-chip-focus-state-layer-color: black;
+    --mdc-chip-focus-state-layer-opacity: 0.12;
+    --mdc-chip-label-text-color: #{$foregroundColor};
+    --mdc-chip-with-icon-icon-color: #{$foregroundColor};
+    --mdc-chip-with-icon-disabled-icon-color: #{$foregroundColor};
+    --mdc-chip-with-icon-selected-icon-color: #{$foregroundColor};
+    --mdc-chip-with-trailing-icon-disabled-trailing-icon-color: #{$foregroundColor};
+    --mdc-chip-with-trailing-icon-trailing-icon-color: #{$foregroundColor};
+}
+
+@mixin mat-chip-overrides(){
+
+
+    // .mat-mdc-chip-remove{
+    //     opacity: .8;
+    // }
+
+    .mat-mdc-standard-chip{
+        --mdc-chip-label-text-weight: 500;
+        --mdc-chip-with-icon-icon-size: 24px;
+    }
+    .mat-mdc-standard-chip.mat-mdc-chip-highlighted.mat-accent {
+
+        // $foregroundColor: #272c30;
+        // $backgroundColor: #c3e5fe;
+
+
+
+
+        $foregroundColor: #2c3d4d;
+        $backgroundColor: #92caff;
+
+
+        // $foregroundColor: #2c2d2e;
+        // $backgroundColor: #dedfe4;
+
+        
+
+
+
+        @include _mat-chip-custom-properties($foregroundColor, $backgroundColor);
+    }
+}
+
+// warn button overrides
+
+@mixin mat-warn-button-overrides(){
+
+
+    --app-del-color: #b8372f;
+
+    .delete-button-border {
+        &.mat-mdc-outlined-button.mat-warn {
+            --mdc-outlined-button-outline-color: var(--app-del-color);
+            --mdc-outlined-button-label-text-color: var(--app-del-color);
+            --mat-outlined-button-state-layer-color: var(--app-del-color);
+        }
+    }
+
+    .delete-button-margin + *{
+        margin-left: 1.2rem !important;
+    }
+
+}

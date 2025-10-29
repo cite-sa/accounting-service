@@ -1,0 +1,36 @@
+{
+	"production": false,
+	"version": "-dev",
+	"isMultitenant": false,
+	"defaultTheme": 0,
+	"defaultLanguage": 0,
+	"defaultCulture": "en",
+	"defaultTimezone": "UTC",
+	"userSettingsVersion": "1",
+	"idp_service": {
+		"enabled": true,
+		"address": "SSOURL",
+		"realm": "neanias-development",
+		"flow": "implicit",
+		"clientId": "accounting",
+		"silentCheckSsoRedirectUri": "URL/assets/silent-check-sso.html",
+		"redirectUri": "URL",
+		"scope": "openid profile email address phone",
+		"clientSecret": null,
+		"grantType": "code"
+	},
+	"app_service": {
+		"enabled": true,
+		"address": "APPURL"
+	},
+	"logging": {
+		"enabled": true,
+		"logLevels": [ "debug", "info", "warning", "error" ]
+	},
+	"globalErrorHandling": {
+		"transmitLogs": true,
+		"appName": "coreApp"
+	},
+	"privacyStatementUrl": "URL/assets/static-pages/privacy-statement.html",
+	"termsOfUseUrl": "URL/assets/static-pages/terms-of-use.html"
+}

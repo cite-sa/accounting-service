@@ -1,0 +1,923 @@
+{
+	"APP": {
+		"NAVIGATION": {
+			"TITLE": "Accounting",
+			"SERVICES": "Services",
+			"SERVICE-RESOURCES": "Resources",
+			"SERVICE-ACTIONS": "Actions",
+			"USER-INFOS": "Users",
+			"SERVICE-SYNCS": "Service Synchronizations",
+			"SERVICE-RESET-ENTRY-SYNCS": "Reset Entry Synchronizations",
+			"USERS": "Users",
+			"MY-ACCOUNTING": "My Accounting",
+			"USER-ROLES": "User Roles",
+			"BLUE-THEME": "Blue Theme",
+			"PINK-THEME": "Pink Theme",
+			"ENGLISH-LANGUAGE": "English",
+			"GREEK-LANGUAGE": "Greek",
+			"PRIVACY-STATEMENT": "Privacy Statement",
+			"TERMS-OF-USE": "Terms of Use",
+			"ADMIN-TITLE": "Admin"
+		},
+		"HOME-COMPONENT": {
+			"TITLE": "Welcome to Accounting"
+		},
+		"TENANT-COMPONENT": {
+			"MESSAGE": {
+				"NOT-FOUND": "Tenant not found"
+			}
+		},
+		"SERVICE-LISTING": {
+			"TITLE": "Services",
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"DESCRIPTION": "Description",
+				"PARENT": "Parent",
+				"CREATED-AT": "Created",
+				"IS-ACTIVE": "Activity",
+				"ACTIONS": "Actions"
+			},
+			"ACTIONS": {
+				"MANAGE": "Manage",
+				"ACCOUNTING": "Accounting",
+				"CREATE-NEW": "Create Service"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"SERVICE-EDITOR": {
+			"TITLE": {
+				"NEW": "New Service"
+			},
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"DESCRIPTION": "Description",
+				"LAST-SYNC-AT": "Last sync",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"PARENT": "Parent"
+			}
+		},
+		"SERVICE-MANAGEMENT-EDITOR": {
+			"TITLE": {
+				"CREATE-DUMMY-DATA": "Create Fake Data",
+				"MANAGE": "Manage"
+			},
+			"FIELDS": {
+				"COUNT": "Count",
+				"MY-COUNT": "My Count",
+				"FROM": "From",
+				"TO": "To",
+				"MEASURE": "Measure",
+				"RESOURCE-CODE-PREFIX": "Resource Code Prefix",
+				"RESOURCE-MAX-VALUE": "Resource Max Value",
+				"ACTION-CODE-PREFIX": "Action Code Prefix",
+				"ACTION-MAX-VALUE": "Action Max Value",
+				"USER-ID-PREFIX": "User Id Prefix",
+				"USER-MAX-VALUE": "User Max Value",
+				"MIN-VALUE": "Min Value",
+				"MAX-VALUE": "Max Value",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"LAST-SYNC-AT": "Last sync"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"SYNC-NOW": "Sync Now",
+				"CLEANUP": "Clean Up",
+				"CREATE-DUMMY-DATA": "Create Fake Data",
+				"DELETE": "Delete"
+			},
+			"CONFIRMATION-DIALOG": {
+				"SYNC-ITEM": "Sync this service?",
+				"CLEANUP-ITEM": "Clean up this service?",
+				"ACTIONS": {
+					"CONFIRMATION": "Confirmation",
+					"CANCELATION": "Cancelation",
+					"CONFIRM": "Yes",
+					"CANCEL": "No"
+				}
+			}
+		},
+		"ACCOUNTING-EDITOR": {
+			"TITLE": {
+				"TITLE": "My Accounting",
+				"FILTERS": "Filters",
+				"CHARTS": "Charts",
+				"DATA": "Data"
+			},
+			"FIELDS": {
+				"FROM": "From",
+				"TO": "To",
+				"AGGREGATE-GROUP-TYPES": "Group By",
+				"AGGREGATE-TYPES": "Calculations",
+				"SERVICE": "Services",
+				"RESOURCES": "Resources",
+				"ACTIONS": "Actions",
+				"USERS": "Users",
+				"DATE-RANGE": "Date Range",
+				"EXCLUDED-SERVICE": "Excluded Services",
+				"EXCLUDED-RESOURCES": "Excluded Resources",
+				"EXCLUDED-ACTIONS": "Excluded Actions",
+				"EXCLUDED-USERS": "Excluded Users",
+				"DATE-INTERVAL": "Date Interval",
+				"MEASURE": "Measure"
+			},
+			"SNACK-BAR": {
+				"MAX-CALCULATE-RESULT-LIMIT": "Too many data for preview please use the csv export"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"RESET": "Reset",
+				"DOWNLOAD-CSV": "Download CSV",
+				"PREVIEW": "Preview"
+			}
+		},
+		"ACCOUNTING-RESULT-CHART": {
+			"TITLE": {
+				"HAS-MULTIPLE-CALCULATIONS": "Chart suported only for single caluclation",
+				"HAS-MANY-DATA": "Too many data for this chart"
+			}
+		},
+		"ACCOUNTING-RESULT-LISTING": {
+			"FIELDS": {
+				"SERVICE-ID": "Service Id",
+				"SERVICE-NAME": "Service Name",
+				"SERVICE-CODE": "Service Code",
+				"RESOURCE-ID": "Resource Id",
+				"RESOURCE-NAME": "Resource Name",
+				"RESOURCE-CODE": "Resource Code",
+				"ACTION-ID": "Action Id",
+				"ACTION-NAME": "Action Name",
+				"ACTION-CODE": "Action Code",
+				"USER-ID": "User Id",
+				"USER-SUBJECT": "User Subject",
+				"USER-NAME": "User Name",
+				"USER-EMAIL": "Email",
+				"SUM": "Sum",
+				"AVERAGE": "Average",
+				"TIMESTAMP": "Timestamp",
+				"MIN": "Min",
+				"MAX": "Max"
+			}
+		},
+		"SERVICE-RESOURCE-LISTING": {
+			"TITLE": "Resources",
+			"ACTIONS": {
+				"CREATE-NEW": "Create Resource"
+			},
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent",
+				"IS-ACTIVE": "Activity",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"SERVICE-RESOURCE-EDITOR": {
+			"TITLE": {
+				"NEW": "New Resource"
+			},
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"USER-LISTING": {
+			"TITLE": "Users",
+			"ACTIONS": {
+				"CREATE-NEW":"Create User"
+			}
+		},
+		"USER-INFO-LISTING": {
+			"TITLE": "Users",
+			"ACTIONS": {
+				"CREATE-NEW": "Create User"
+			},
+			"FIELDS": {
+				"EMAIL": "Email",
+				"SUBJECT": "Subject",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"USER-INFO-EDITOR": {
+			"TITLE": {
+				"NEW": "New User"
+			},
+			"FIELDS": {
+				"EMAIL": "Email",
+				"SUBJECT": "Subject",
+				"ISSUER": "Issuer",
+				"RESOLVED": "Resolved",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"SERVICE-ACTION-LISTING": {
+			"TITLE": "Actions",
+			"ACTIONS": {
+				"CREATE-NEW": "Create Action"
+			},
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent",
+				"IS-ACTIVE": "Activity",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"SERVICE-ACTION-EDITOR": {
+			"TITLE": {
+				"NEW": "New Action"
+			},
+			"FIELDS": {
+				"CODE": "Code",
+				"NAME": "Name",
+				"SERVICE": "Service",
+				"PARENT": "Parent"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"SERVICE-SYNC-LISTING": {
+			"TITLE": "Service Synchronizations",
+			"ACTIONS": {
+				"CREATE-NEW":"Create Service Synchronization"
+			},
+			"FIELDS": {
+				"SERVICE": "Service",
+				"LAST-SYNC-AT": "Last sync",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"STATUS": "Status",
+				"IS-ACTIVE": "Activity",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"SERVICE-SYNC-EDITOR": {
+			"TITLE": {
+				"NEW": "New Sync"
+			},
+			"FIELDS": {
+				"SERVICE": "Service",
+				"LAST-SYNC-AT": "Last sync",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"STATUS": "Status"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"SERVICE-RESET-ENTRY-SYNC-LISTING": {
+			"TITLE": "Reset Entry  Synchronizations",
+			"ACTIONS": {
+				"CREATE-NEW": "Create Reset Entry Synchronization"
+			},
+			"FIELDS": {
+				"SERVICE": "Service",
+				"LAST-SYNC-AT": "Last sync",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"LAST-SYNC-ENTRY-ID": "Last synced entry id",
+				"STATUS": "Status",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"SERVICE-RESET-ENTRY-SYNC-EDITOR": {
+			"TITLE": {
+				"NEW": "New Reset Entry Sync"
+			},
+			"FIELDS": {
+				"SERVICE": "Service",
+				"LAST-SYNC-AT": "Last sync",
+				"LAST-SYNC-ENTRY-TIMESTAMP-AT": "Last synced entry",
+				"LAST-SYNC-ENTRY-ID": "Last synced entry id",
+				"STATUS": "Status"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"USER-ROLE-LISTING": {
+			"TITLE": "User Roles",
+			"ACTIONS": {
+				"CREATE-NEW": "Create User Role"
+			},
+			"FIELDS": {
+				"NAME": "Name",
+				"PROPAGATE": "Propagate",
+				"IS-ACTIVE": "Activity",
+				"CREATED-AT": "Created"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"USER-ROLE-EDITOR": {
+			"TITLE": {
+				"NEW": "New Role"
+			},
+			"FIELDS": {
+				"NAME": "Name",
+				"PROPAGATE": "Propagate",
+				"RIGHTS": "Rights"
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"EDITOR-ACTIONS": {
+			"SAVE": "Save",
+			"BACK": "Back",
+			"DELETE": "Delete"
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Active",
+				"INACTIVE": "Inactive"
+			},
+			"APP-ROLE": {
+				"ADMIN": "Admin",
+				"USER": "User"
+			},
+			"LANGUAGE-TYPE": {
+				"ENGLISH": "English",
+				"GREEK": "Greek"
+			},
+			"PROPAGATE-TYPE": {
+				"YES": "Yes",
+				"NO": "No"
+			},
+			"SERVICE-SYNC-STATUS": {
+				"PENDING": "Pending",
+				"SYNCING": "Syncing"
+			},
+			"MEASURE-TYPE": {
+				"TIME": "Time",
+				"INFORMATION": "Information",
+				"THROUGHPUT": "Throughput",
+				"UNIT": "Unit"
+			},
+			"AGGREGATE-TYPE": {
+				"AVERAGE": "Average",
+				"MAX": "Max",
+				"MIN": "Min",
+				"SUM": "Sum"
+			},
+			"AGGREGATE-GROUP-TYPE": {
+				"SERVICE": "Service",
+				"RESOURCE": "Resource",
+				"USER": "User",
+				"ACTION": "Action"
+			},
+			"DATE-INTERVAL-TYPE": {
+				"NONE": "",
+				"DAY": "Day",
+				"HOUR": "Hour",
+				"MONTH": "Month",
+				"YEAR": "Year"
+			},
+			"DATE-RANGE-TYPE": {
+				"CUSTOM": "Custom",
+				"TODAY": "Today",
+				"THIS-MONTH": "This Month",
+				"THIS-YEAR": "This Year"
+			}
+		}
+	},
+	"USER-SERVICE": {
+		"USER-PROFILE-COMPONENT": {
+			"TABS": {
+				"PROFILE": "Profile",
+				"PERSONAL": "Personal"
+			},
+			"PERSONAL": {
+				"NAME": "Name"
+			},
+			"CONTACT-INFO": {
+				"NAME": "Name",
+				"EMAIL": "Email"
+			},
+			"PROFILE": {
+				"TITLE": "Profile",
+				"FIELDS": {
+					"TIMEZONE": "Timezone",
+					"CULTURE": "Culture",
+					"LANGUAGE": "Language"
+				}
+			},
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel"
+			}
+		},
+		"USER-LISTING": {
+			"TITLE": "Users",
+			"FIELDS": {
+				"NAME": "Name",
+				"EMAIL": "E-mail",
+				"SUBJECT": "External Subject Id",
+				"ISSUER": "External Subject Issuer",
+				"IS-ACTIVE": "Status"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"ROLES": "Roles",
+				"IS-ACTIVE": "Status",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			}
+		},
+		"USER-EDITOR": {
+			"TITLE": {
+				"NEW": "New User"
+			},
+			"FIELDS": {
+				"NAME": "Name",
+				"EMAIL": "E-mail",
+				"TIMEZONE": "Timezone",
+				"CULTURE": "Culture",
+				"LANGUAGE": "Language",
+				"ROLES": "Service Roles",
+				"SERVICE": "Service",
+				"SUBJECT": "External Subject Id",
+				"ISSUER": "External Subject Issuer",
+				"ROLE": "Role",
+				"ACTIONS": "Actions"
+			},
+			"ROLES-TAB": "Roles",
+			"USER-TAB": "User",
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel",
+				"DELETE": "Delete"
+			}
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Active",
+				"INACTIVE": "Inactive"
+			}
+		}
+	},
+	"IDP-SERVICE": {
+		"TENANT-CONFIGURATION": {
+			"CREDENTIAL-PROVIDERS-EDITOR": {
+				"ACTIONS": {
+					"SAVE": "Save"
+				}
+			}
+		},
+		"USER-CONSENTS": {
+			"TITLE": "User Consents",
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel"
+			}
+		},
+		"USER-ROLE-ASSIGNMENT": {
+			"TITLE": "User Role Assignment",
+			"UNSAVED-CHANGES": "There are unsaved changes",
+			"FIELDS": {
+				"NAME": "Name",
+				"ROLES": "Roles"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"MORE-FILTERS": "More Filters",
+				"LIKE": "search...",
+				"ROLES": "Roles",
+				"IS-ACTIVE": "Status",
+				"SHOW-INACTIVE": "SHOW DELETED"
+			},
+			"ACTIONS": {
+				"SAVE-ALL": "Save all changes",
+				"DISCARD-ALL": "Discard all changes"
+			}
+		},
+		"ACCESS-TOKEN-LISTING": {
+			"TITLE": "Access Tokens",
+			"FIELDS": {
+				"USERNAME": "Username",
+				"CLIENT": "Client",
+				"TYPE": "Type",
+				"LATEST-EXPIRES-AT": "Latest expiration",
+				"LATEST-CREATED-AT": "Latest creation",
+				"COUNT": "Count",
+				"ACTION": "Action"
+			},
+			"FILTER": {
+				"SEARCH-FILTER": "Search Filters",
+				"ALL-FILTERS": "All the filters",
+				"NO-FILTERS": "No filter",
+				"LIKE": "search..."
+			}
+		},
+		"TOTP-DIALOG-COMPONENT": {
+			"TITLE": "Two Step Verification",
+			"ACTIONS": {
+				"DONE": "Done",
+				"CANCEL": "Cancel"
+			}
+		},
+		"AUTHENTICATION": {
+			"TITLES": {
+				"LOGIN": "Login",
+				"DIRECT-LINK-LOGIN": "Login with direct link",
+				"REGISTER": "Or Register",
+				"SUCCESSFUL-REQUEST": "Successful Registration",
+				"SUCCESSFUL-REQUEST-SUBTITLE": "Your registration request has been successfully sent",
+				"SUCCESSFUL-REQUEST-CHECK-MAIL": "We have sent you an email with login information to complete your registration. please check your emails",
+				"INVITATION-CODE": "Please insert invitation code",
+				"PROVIDER-SELECTION": "Please select authentication provider",
+				"REGISTRATION-FIELDS": "User information",
+				"EXTERNAL-PROVIDERS": "External authentication providers",
+				"INTERNAL-PROVIDER": "Internal authentication provider",
+				"TENANT-SELECTION": "Please enter your Company Name",
+				"USER-CONSENTS": "User Consents",
+				"FAILED-LOGIN": "Login Failure",
+				"FAILED-LOGIN-SUBTITLE": "The link used to connect has expired.",
+				"FAILED-LOGIN-CLAIM-MAIL-OTP": "The link used to connect has expired. Please create a new one-time link."
+			},
+			"FIELDS": {
+				"INVITATION-CODE": "Invitation code",
+				"USERNAME": "Username",
+				"PASSWORD": "Password",
+				"EMAIL": "E-mail",
+				"CONFIRM-EMAIL": "Confirm E-mail",
+				"TOTP": "Two Step Authentication Code (if enabled)",
+				"CONFIRM-PASSWORD": "Confirm password",
+				"TENANT": "Company"
+			},
+			"ACTIONS": {
+				"LOGIN": "Login",
+				"LOGOUT": "Log Out",
+				"PASSWORD-RESET": "Reset password",
+				"REGISTER": "Register",
+				"REGISTER-WITH-INVITATION": "I have an invitation",
+				"SAML-LOGIN": "Saml",
+				"CAS-LOGIN": "CAS",
+				"NEXT": "Next",
+				"BACK": "Back",
+				"CONTINUE": "Continue",
+				"BACK-TO-LOGIN": "Back to login page"
+			},
+			"MESSAGES": {
+				"SIGN-OUT-IN-PROGRESS": "Logging out...",
+				"TENANT-NOT-FOUND": "Tenant not found"
+			}
+		},
+		"DECLINE-REGISTRATION-INVITATION": {
+			"TITLE": "We 're sorry, to see you going!",
+			"SUBTITLE": "If there is any specific reason for not using this invitation, please let us know. Thank you.",
+			"FIELDS": {
+				"TEXT": "Notes"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Registration invitation declined"
+			}
+		},
+		"PASSWORD-RESET": {
+			"TITLE": "Password Reset",
+			"FIELDS": {
+				"PASSWORD": "Password",
+				"PASSWORD-REPEAT": "Repeat password"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Password reset successful"
+			}
+		},
+		"DECLINE-PASSWORD-RESET": {
+			"TITLE": "We 're sorry!",
+			"SUBTITLE": "We 'll investigate further how this email reached you. If you have any information, let us know. Thank you.",
+			"FIELDS": {
+				"TEXT": "Notes"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "Password reset declined"
+			}
+		},
+		"PASSWORD-RESET-POPUP": {
+			"TITLE": "Request Password Reset",
+			"INFO": "An e-mail will be sent to the specified address with instructions for reseting your password",
+			"FIELDS": {
+				"USERNAME": "Username",
+				"EMAIL": "E-mail"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "E-mail sent. Validation link will remain valid until "
+			}
+		},
+		"USER-INVITATION": {
+			"TITLE": "Invite Users",
+			"REQUIRED": "At least one user or email must be selected",
+			"FIELDS": {
+				"USERS": "Users",
+				"EMAILS": "E-mails",
+				"ROLE": "Role to assign",
+				"INVITE-EXISTING-USERS": "Invite existing users",
+				"INVITE-NEW-USERS-BY-EMAIL": "Invite new users by email"
+			},
+			"ACTIONS": {
+				"ADD-EMAIL": "Add e-mail",
+				"SEND-INVITATIONS": "Send invitations"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "E-mails sent. Invitation link will remain valid until "
+			}
+		},
+		"USER-PASS-OVERRIDE-DIALOG": {
+			"TITLE": "Password Override",
+			"FIELDS": {
+				"USERNAME": "Username",
+				"PASSWORD": "Password",
+				"PASSWORD-REPEAT": "Repeat password"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			}
+		},
+		"CONSENTS-GUARD-DIALOG": {
+			"TITLE": "In order to proceed, you need to accept the following consents",
+			"ACTIONS": {
+				"SAVE": "Save",
+				"CANCEL": "Cancel"
+			}
+		},
+		"USER-CONSENTS-EDITOR": {
+			"CONSENT-AWARENESS": "*Consents can be changed anytime through the User Profile page."
+		},
+		"SEND-INVITATION-POPUP": {
+			"TITLE": "Invite User",
+			"FIELDS": {
+				"EMAIL": "E-mail"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Submit"
+			},
+			"SNACK-BAR": {
+				"SUCCESS": "E-mail sent. Invitation link will remain valid until "
+			}
+		},
+		"USER-CREDENTIALS": {
+			"COLUMNS": {
+				"PROVIDER": "Provider",
+				"REMOVE": "Revoke"
+			},
+			"ADD-POPUP-TITLE": "Success",
+			"ADD-POPUP-MESSAGE": "An invitation sent to your email to associate your user with another Credential Provider. Please follow the link from your email.",
+			"ACTIONS": {
+				"ADD-PROVIDER": "Connect With a different provider",
+				"CANCEL": "Cancel"
+			}
+		},
+		"TOTP-SETUP": {
+			"ENABLE-TITLE": "For increased security your can activate Two Step Authentication",
+			"DISABLE-TITLE": "Two Step Authentication is active",
+			"QR-CODE-MESSAGE": "Please scan the following QR Code using your code generation application",
+			"MANUAL-INPUT": "or enter the following code manually",
+			"BACKUP-CODE": "Please write down the following code, as it can be used as a backup code",
+			"VERIFICATION-TITLE": "Please enter a generated code",
+			"CODE": "Code",
+			"ACTIONS": {
+				"ENABLE": "Enable",
+				"DISABLE": "Disable",
+				"NEXT": "Next",
+				"VERIFY": "Verify",
+				"CANCEL": "Cancel"
+			}
+		},
+		"TOTP-INPUT": {
+			"PLACEHOLDER": "Two Step Authentication Code"
+		},
+		"TYPES": {
+			"IS-ACTIVE": {
+				"ACTIVE": "Active",
+				"INACTIVE": "Inactive"
+			},
+			"CREDENTIAL-PROVIDER": {
+				"SERVICE": "Service",
+				"USER-PASS": "Internal account",
+				"GOOGLE": "Google",
+				"FACEBOOK": "Facebook",
+				"TWITTER": "Twitter",
+				"LINKED-IN": "LinkedIn",
+				"GIT-HUB": "GitHub",
+				"SAML": "Saml",
+				"CAS": "CAS",
+				"API-KEY": "API Key",
+				"DIRECT-LINK": "Direct Link",
+				"TRANSIENT": "Transient",
+				"TOTP": "Time-based One-Time Password"
+			}
+		}
+	},
+	"COMMONS": {
+		"CUSTOM-USER-SETTINGS": {
+			"LABEL": "Filter Profile",
+			"PLACEHOLDER": "Choose Filter Profile",
+			"FILTER-NAME": "Filter Name",
+			"ACTIONS": {
+				"UPDATE-FILTER": "Update Filter",
+				"SAVE-FILTER-AS": "Save Filter As",
+				"SETTINGS-LIST-BUTTON": "Saved Filters",
+				"DELETE": "Delete"
+			}
+		},
+		"FILTER-NAME-DIALOG": {
+			"TITLE": "A filter name is required",
+			"FIELDS": {
+				"FILTER-NAME": "Filter Name"
+			},
+			"ACTIONS": {
+				"SUBMIT": "Save",
+				"CANCEL": "Cancel"
+			}
+		},
+		"LANGUAGES": {
+			"EN": "English",
+			"GR": "Greek"
+		},
+		"LISTING-COMPONENT": {
+			"SETTINGS": {
+				"TITLE": "Settings",
+				"APPLY": "Apply",
+				"CLOSE": "Close"
+			},
+			"MESSAGE": {
+				"EMPTY": "No data to display",
+				"TOTAL": "Total",
+				"SELECTED": "Selected"
+			}
+		},
+		"VALIDATION": {
+			"REQUIRED": "Required field",
+			"INVALID-JSON": "Invalid selection",
+			"EMAIL": "Invalid e-mail",
+			"PHONE": "Invalid format",
+			"PASSWORD-MISMATCH": "Passwords do not match",
+			"EMAIL-MISMATCH": "E-mails do not match"
+		},
+		"CONFIRMATION-DIALOG": {
+			"SEND-INVITATION": "Send invitation?",
+			"DELETE-ITEM": "Delete this item?",
+			"DELETE-USER-SETTING-PROFILE": "Delete this filter;",
+			"ACTIONS": {
+				"CONFIRMATION": "Confirmation",
+				"CANCELATION": "Cancelation",
+				"CONFIRM": "Yes",
+				"CANCEL": "No"
+			}
+		},
+		"PENDING-FORM-CHANGES-DIALOG": {
+			"MESSAGE": "You haven't saved your changes. Are you sure you want to leave this page?",
+			"ACTIONS": {
+				"YES": "Yes",
+				"NO": "No"
+			}
+		},
+		"ACTIONS": {
+			"NEXT": "Next",
+			"BACK": "Back",
+			"NEW": "New",
+			"CONTINUE": "Continue"
+		},
+		"TEXT-FILTER": {
+			"LIKE": "search..."
+		},
+		"SNACK-BAR": {
+			"SUCCESSFUL-CREATION": "Successful creation",
+			"SUCCESSFUL-UPDATE": "Successful update",
+			"UNSUCCESSFUL-OPERATION": "Unsuccessful operation",
+			"SUCCESSFUL-LOGIN": "Successful login",
+			"SUCCESSFUL-REGISTRATION": "Successful registration"
+		},
+		"ERRORS": {
+			"DEFAULT": "An Unexpected Error Occurred"
+		}
+	},
+	"SIDE-BAR": {
+		"GENERAL": {
+			"TITLE": "General",
+			"HOME": "Home"
+		},
+		"MY-ACCOUNTING": {
+			"TITLE": "My Accounting",
+			"MY-ACCOUNTING":"My Accounting"
+		},
+		"SERVICES": {
+			"TITLE": "Services",
+			"SERVICES": "Services",
+			"SERVICE-RESOURCES": "Resources",
+			"SERVICE-USERS": "Users",
+			"SERVICE-ACTIONS": "Actions"
+		},
+		"ADMIN": {
+			"TITLE": "Admin",
+			"USERS": "Users",
+			"USER-ROLES": "User Roles",
+			"SERVICE-SYNCS":"Service Synchronizations",
+			"SERVICE-RESET-ENTRY-SYNCS":"Reset Entry Synchronizations"
+		},
+		"INFO": {
+			"TITLE": "Info",
+			"PRIVACY": "Privacy Statement",
+			"TERMS": "Terms of Use"
+		}
+	}
+}

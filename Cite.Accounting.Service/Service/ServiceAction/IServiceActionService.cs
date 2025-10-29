@@ -1,0 +1,12 @@
+﻿using Cite.Tools.FieldSet;
+using System;
+using System.Threading.Tasks;
+
+namespace Cite.Accounting.Service.Service.ServiceAction
+{
+	public interface IServiceActionService
+	{
+		Task<Model.ServiceAction> PersistAsync(Model.ServiceActionPersist model, IFieldSet fields = null);
+		Task DeleteAndSaveAsync(Guid id);
+	}
+}

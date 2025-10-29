@@ -1,0 +1,37 @@
+<div class="container-fluid">
+	<div class="row">
+		<div class="col-md-8 offset-md-2">
+
+			<div class="row pt-4">
+				<div class="col"><app-navigation-breadcrumb></app-navigation-breadcrumb></div>
+
+				<div *ngIf="authService.hasPermission(authService.permissionEnum.EditServiceResetEntrySync)"  class="col-auto">
+					<button mat-flat-button class="mat-fab-bottom-right" (click)="onNewItem()">
+						<mat-icon class="mat-24">add</mat-icon>
+						{{ 'APP.SERVICE-RESET-ENTRY-SYNC-LISTING.ACTIONS.CREATE-NEW' | translate }}
+					</button>
+				</div>
+			</div>
+
+			<div class="row mt-4 mb-1">
+				<div class="col">
+					<app-service-reset-entry-sync-listing-filters
+						[key]="userSettingsKey" 
+						[lookup]="lookup" 
+						[autoSelectUserSettings]="autoSelectUserSettings"
+						[(filter)]="lookup" 
+						(filterChange)="filterChanged($event)"
+						(changeSetting)="changeSetting($event)"
+					></app-service-reset-entry-sync-listing-filters>
+				</div>
+			</div>
+
+			<app-listing [rows]="gridRows" [columns]="gridColumns" [visibleColumns]="visibleColumns" [count]="totalElements" [offset]="currentPageNumber" [limit]="lookup.page.size" [defaultSort]="lookup.order?.items" [externalSorting]="true" (rowActivated)="onRowActivated($event)" (pageLoad)="onPageLoad($event)" (columnSort)="onColumnSort($event)" (columnsChanged)="onColumnsChanged($event)">
+			</app-listing>
+		</div>
+	</div>
+</div>
+
+<ng-template #isActiveTemplate ngx-datatable-cell-template let-row="row">
+	<span class="activity-status" [ngClass]="{'activity-status--active': row.isActive == isActive.Active, 'activity-status--inactive': row.isActive == isActive.Inactive }">{{ enumUtils.toIsActiveString(row.isActive) }}</span>
+</ng-template>

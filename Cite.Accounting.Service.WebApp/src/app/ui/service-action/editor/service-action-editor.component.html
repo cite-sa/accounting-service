@@ -1,0 +1,41 @@
+<div class="container-fluid">
+	<div *ngIf="formGroup" class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="row pt-4 pb-2"><div class="col"><app-navigation-breadcrumb></app-navigation-breadcrumb></div></div>
+
+			<mat-card class="mt-4 pt-2">
+				<mat-card-content>
+					<form (ngSubmit)="formSubmit()" [formGroup]="formGroup">
+						<div class="row">
+							<mat-form-field class="col-md-4">
+								<mat-label>{{'APP.SERVICE-ACTION-EDITOR.FIELDS.NAME' | translate}}</mat-label>
+								<input matInput type="text" name="service-action-name" formControlName="name" required>
+								<mat-error *ngIf="formGroup.get('name').hasError('backendError')">{{formGroup.get('name').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('name').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<mat-label>{{'APP.SERVICE-ACTION-EDITOR.FIELDS.CODE' | translate}}</mat-label>
+								<input matInput type="text" name="service-action-code" formControlName="code" required>
+								<mat-error *ngIf="formGroup.get('code').hasError('backendError')">{{formGroup.get('code').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('code').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<app-single-auto-complete placeholder="{{'APP.SERVICE-ACTION-EDITOR.FIELDS.SERVICE' | translate}}" formControlName="service" [configuration]="singleServiceAutocompleteConfiguration"  (optionSelected)="onServiceChanged($event)" required>
+								</app-single-auto-complete>
+								<mat-error *ngIf="formGroup.get('service').hasError('backendError')">{{formGroup.get('service').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('service').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4" *ngIf="formGroup.get('service').value?.id">
+								<app-single-auto-complete placeholder="{{'APP.SERVICE-ACTION-EDITOR.FIELDS.PARENT' | translate}}" formControlName="parent" [configuration]="singleServiceActionAutocompleteConfiguration">
+								</app-single-auto-complete>
+								<mat-error *ngIf="formGroup.get('parent').hasError('backendError')">{{formGroup.get('parent').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('parent').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+						<app-editor-actions-component [canDelete]="this.editorModel.canDelete && !isDeleted && !isNew" [canSave]="this.editorModel.canEdit && !isDeleted" (onDelete)="delete()" (onCancel)="cancel()" (onSave)="save()"></app-editor-actions-component>
+					</form>
+				</mat-card-content>
+			</mat-card>
+		</div>
+	</div>
+</div>

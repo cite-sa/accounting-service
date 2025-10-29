@@ -1,0 +1,23 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>net8.0</TargetFramework>
+		<EmbeddedResourceUseDependentUponConvention>false</EmbeddedResourceUseDependentUponConvention>
+	</PropertyGroup>
+	<ItemGroup>
+		<Compile Update="Assets\Resources\MySharedResources.cs">
+			<CopyToOutputDirectory>Never</CopyToOutputDirectory>
+		</Compile>
+		<Compile Update="Assets\Resources\MySharedResources.el.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MySharedResources.el.resx</DependentUpon>
+		</Compile>
+		<Compile Update="Assets\Resources\MySharedResources.en.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>MySharedResources.en.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>
+
+</Project>

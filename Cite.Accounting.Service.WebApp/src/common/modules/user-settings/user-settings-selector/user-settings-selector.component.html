@@ -1,0 +1,36 @@
+@if (anyAvailableSetting == true && currentUserSetting != null) {
+	<button
+		mat-button class="btn--shadow"
+		[matMenuTriggerFor]="settingsMenu"
+	>	
+		<mat-icon>menu</mat-icon>
+		{{currentUserSetting.name}}
+		<span *ngIf="editingFilter" class="ml-1 editing-dot-indication"></span>
+	</button>
+
+} @else {
+
+	<button 
+		mat-icon-button class="btn--shadow"
+		matTooltip="{{'COMMONS.CUSTOM-USER-SETTINGS.ACTIONS.SAVE-FILTER-AS' | translate}}" 
+		(click)="saveFilter()"
+	>
+		<mat-icon>add_circle_outline</mat-icon>
+	</button>
+}
+
+<mat-menu #settingsMenu>
+	<button mat-menu-item (click)="updateFilter()" [disabled]="!(currentUserSetting && currentUserSetting.id)">
+		<mat-icon>save</mat-icon><span>{{'COMMONS.CUSTOM-USER-SETTINGS.ACTIONS.UPDATE-FILTER' | translate}}</span>
+	</button>
+	<button mat-menu-item (click)="saveFilter()" [disabled]="!editingFilter">
+		<mat-icon>add_circle_outline</mat-icon><span>{{'COMMONS.CUSTOM-USER-SETTINGS.ACTIONS.SAVE-FILTER-AS' | translate}}</span>
+	</button>
+	<button mat-menu-item (click)="settingDeleted()" type="button" color="accent" [disabled]="!(currentUserSetting && currentUserSetting.id)">
+		<mat-icon>delete</mat-icon><span>{{'COMMONS.CUSTOM-USER-SETTINGS.ACTIONS.DELETE' | translate}}</span>
+	</button>
+	<mat-divider *ngIf="settingOptions.length > 0"></mat-divider>
+	<button mat-menu-item *ngFor="let setting of settingOptions" (click)="settingSelected(setting)">
+		{{getSettingName(setting)}}
+	</button>
+</mat-menu>

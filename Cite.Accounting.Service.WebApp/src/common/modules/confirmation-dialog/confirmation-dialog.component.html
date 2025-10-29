@@ -1,0 +1,12 @@
+<mat-dialog-content>
+	<div class="row pt-2 pb-2">
+		<div class="col-12">
+			{{ data.message }}
+		</div>
+	</div>
+	<div class="row pt-4">
+		<div class="col"></div>
+		<div class="col-auto"><button mat-raised-button color="warn" type="button" (click)="cancel()">{{ data.cancelButton }}</button></div>
+		<div class="col-auto"><button mat-raised-button color="primary" type="button" (click)="confirm()">{{ data.confirmButton }}</button></div>
+	</div>
+</mat-dialog-content>

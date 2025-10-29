@@ -1,0 +1,28 @@
+{
+	"HealthCheck": {
+		"Endpoints": {
+			"Ready": {
+				"IsEnabled": false,
+				"RequireHosts": null,
+				"EndpointPath": "/health-check/ready",
+				"IncludeTag": "ready",
+				"AllowCaching": false,
+				"HealthyStatusCode": 200,
+				"DegradedStatusCode": 200,
+				"UnhealthyStatusCode": 503,
+				"VerboseResponse": true
+			},
+			"Live": {
+				"IsEnabled": true,
+				"RequireHosts": null,
+				"EndpointPath": "/health-check/live",
+				"IncludeTag": "live",
+				"AllowCaching": false,
+				"HealthyStatusCode": 200,
+				"DegradedStatusCode": 200,
+				"UnhealthyStatusCode": 503,
+				"VerboseResponse": true
+			}
+		}
+	}
+}

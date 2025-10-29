@@ -1,0 +1,44 @@
+<nav class="navbar navbar-expand-lg fixed-navbar">
+  <div class="container-fluid p-0 h-100">
+    <div class="hamburger change" id="hamburger" (click)="toggleSidebar()">
+			<div class="icon-bar1"></div>
+			<div class="icon-bar2"></div>
+			<div class="icon-bar3"></div>
+    </div>
+
+		<a routerLink="/"><img class="app-logo-image" src="assets/images/app-logo.svg" alt="Accounting"></a>
+
+    <ul class="avatar navbar-toggler ml-auto" [matMenuTriggerFor]="accountMenu"><li>
+      <img mat-card-avatar class="my-mat-card-avatar" src="assets/images/profile-placeholder.png">
+    </li></ul>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navigation">
+			<div *ngIf="isAuthenticated()">
+        <button mat-button [matMenuTriggerFor]="languageMenu" class="m-0 lang">
+					<mat-icon class="mr-2">language</mat-icon><span class="text-uppercase">{{selectedLanguageValue}}</span>
+					<mat-icon>arrow_drop_down</mat-icon>
+				</button>
+
+      </div>
+      <ul class="avatar" [matTooltip]="getPrincipalName" [matMenuTriggerFor]="accountMenu">
+        <li><img mat-card-avatar class="my-mat-card-avatar" src="assets/images/profile-placeholder.png"></li>
+      </ul>
+
+    </div>
+  </div>
+</nav>
+<div *ngIf="progressIndication" class="progress-bar">
+  <mat-progress-bar color="primary" mode="indeterminate"></mat-progress-bar>
+</div>
+
+<mat-menu #languageMenu="matMenu" class="navbar-dialog">
+  <app-language [languages]="languages" [selectedLanguage]="selectedLanguage" (languageChange)="getLanguage($event)"></app-language>
+</mat-menu>
+
+<mat-menu #accountMenu="matMenu" class="navbar-dialog">
+  <!-- <button mat-menu-item>Item 1</button>
+  <button mat-menu-item>Item 2</button> -->
+  <!-- <button mat-menu-item>My Account</button>
+  <mat-divider></mat-divider> -->
+  <button mat-menu-item routerLink="logout">{{'IDP-SERVICE.AUTHENTICATION.ACTIONS.LOGOUT' | translate }}</button>
+</mat-menu>

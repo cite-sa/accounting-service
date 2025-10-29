@@ -1,0 +1,32 @@
+.multiple-auto-complete {
+	margin-left: inherit;
+	margin-right: inherit;
+
+	.not-loading {
+		display: none;
+	}
+
+	
+	.align-arrow-right {
+		position: absolute;
+		right: 0;
+		vertical-align: middle;
+	}
+
+	.chip-row {
+		height: auto;
+		padding-top: 0.4rem;
+		padding-bottom: 0.4rem;
+	}
+
+	.chip-text {
+		white-space: normal;
+    word-break: break-word;
+	}
+
+}
+
+.two-line-mat-option {
+	height: 3.5em;
+	line-height: 1.2em;
+}

@@ -1,0 +1,15 @@
+﻿using Cite.Accounting.Service.Common;
+using Cite.Tools.FieldSet;
+using System;
+using System.Threading.Tasks;
+
+namespace Cite.Accounting.Service.Service.TenantConfiguration
+{
+	public interface ITenantConfigurationService
+	{
+		Task<Common.DefaultUserLocaleConfigurationDataContainer> CollectTenantUserLocaleAsync();
+		Task<Model.TenantConfiguration> PersistAsync(Model.TenantConfigurationUserLocaleIntegrationPersist model, IFieldSet fields = null);
+		Task DeleteAndSaveAsync(Guid id);
+		Task DeleteAndSaveAsync(TenantConfigurationType type);
+	}
+}

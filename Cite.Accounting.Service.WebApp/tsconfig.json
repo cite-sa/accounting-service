@@ -1,0 +1,42 @@
+{
+    "compileOnSave": false,
+    "compilerOptions": {
+        "baseUrl": "./src",
+        "outDir": "./dist/out-tsc",
+        "sourceMap": true,
+        "declaration": false,
+        "target": "ES2022",
+        "module": "es2020",
+        "moduleResolution": "node",
+        "experimentalDecorators": true,
+        "importHelpers": true,
+        "useDefineForClassFields": false,
+        "typeRoots": [
+            "node_modules/@types"
+        ],
+        "lib": [
+            "es2018",
+            "dom"
+        ],
+        "paths": {
+            "@app/*": [
+                "./app/*"
+            ],
+            "@idp-service/*": [
+                "./idp-service/*"
+            ],
+            "@user-service/*": [
+                "./user-service/*"
+            ],
+            "@notification-service/*": [
+                "./notification-service/*"
+            ],
+            "@blueprint-service/*": [
+                "./blueprint-service/*"
+            ],
+            "@common/*": [
+                "./common/*"
+            ]
+        }
+    }
+}

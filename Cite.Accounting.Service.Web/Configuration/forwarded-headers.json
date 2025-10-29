@@ -1,0 +1,22 @@
+{
+	"ForwardedHeaders": {
+		"Enable": true,
+		"ForwardedHeaders": "All",
+		"ForwardedForHeaderName": null,
+		"ForwardedProtoHeaderName": null,
+		"ForwardedHostHeaderName": null,
+		"ForwardLimit": 1,
+		"KnownProxies": [],
+		"KnownNetworks": []
+		//example
+		//"KnownProxies": [
+		//	"10.250.10.200"
+		//],
+		//"KnownNetworks": [
+		//	{
+		//		"Prefix": 24,
+		//		"IPAddress": "::ffff:10.250.10.200"
+		//	}
+		//]
+	}
+}

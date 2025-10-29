@@ -1,0 +1,112 @@
+<div class="">
+	<ng-container *ngFor="let groupMenuItem of groupMenuItems; let firstGroup = first; let i = index">
+		<mat-list *ngIf="groupMenuItem?.routes?.length > 0" class="mat-list">
+			<div>
+				<hr *ngIf="!firstGroup">
+
+				<mat-list-item routerLinkActive="active" [isActiveMatchOptions]="{ paths: 'exact', queryParams: 'ignored' }" *ngFor="let groupMenuRoute of groupMenuItem.routes; let first = first" [ngClass]="{'mt-4': first && firstGroup}">
+
+					<ng-container *ngIf="groupMenuRoute.routeType == routeType.System; else configurableItems">
+						<a class="side-nav-item" [routerLink]="[groupMenuRoute.path]">
+							<i class="material-symbols-outlined">{{ groupMenuRoute.icon }}</i>
+							<span style="text-wrap: wrap;">{{groupMenuRoute.title | translate}}</span>
+						</a>
+					</ng-container>
+
+					<ng-template #configurableItems>
+						<ng-container *ngIf="groupMenuRoute.path && groupMenuRoute.path != ''; else externalLink">
+							<a class="side-nav-item" [routerLink]="[routerUtils.generateUrl(groupMenuRoute.path)]">
+								<i class="material-symbols-outlined">{{ groupMenuRoute.icon }}</i>
+								<span>{{groupMenuRoute.title | translate}}</span>
+							</a>
+						</ng-container>
+
+						<ng-template #externalLink>
+							<a class="side-nav-item" *ngIf="groupMenuRoute.externalUrl && groupMenuRoute.externalUrl!=''" href="{{groupMenuRoute.externalUrl}}" target="_blank">
+								<i class="material-symbols-outlined">{{ groupMenuRoute.icon }}</i>
+								<span>{{groupMenuRoute.title | translate}} <span class="material-symbols-outlined external-link-icon">open_in_new</span></span>
+							</a>
+						</ng-template>
+					</ng-template>
+				</mat-list-item>
+			</div>
+		</mat-list>
+	</ng-container>
+</div>
+
+<!-- <mat-toolbar class="navigation-bar row" color="primary">
+	<a class="col-auto app-logo" routerLink="/">
+		<img class="app-logo-image" [src]="themingService.getImage('assets/images/app-logo', '.png')" alt="Accounting">
+	</a>
+	<div class="col-auto" *ngIf="isAuthenticated()">
+		<div class="row gx-1">
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewServicePage) && authService.CanManageAnySevice()" class="col-auto px-1"><a mat-button class="menu-item" routerLink="services" routerLinkActive="active">{{'APP.NAVIGATION.SERVICES' | translate}}</a></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResourcePage) && authService.CanManageAnySevice()" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResourcePage) && authService.CanManageAnySevice()" class="col-auto px-1"><a mat-button class="menu-item" routerLink="service-resources" routerLinkActive="active">{{'APP.NAVIGATION.SERVICE-RESOURCES' | translate}}</a></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceActionPage) && authService.CanManageAnySevice()" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceActionPage) && authService.CanManageAnySevice()" class="col-auto px-1"><a mat-button class="menu-item" routerLink="service-actions" routerLinkActive="active">{{'APP.NAVIGATION.SERVICE-ACTIONS' | translate}}</a></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserInfoPage) && authService.CanManageAnySevice()" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserInfoPage) && authService.CanManageAnySevice()" class="col-auto px-1"><a mat-button class="menu-item" routerLink="service-users" routerLinkActive="active">{{'APP.NAVIGATION.USER-INFOS' | translate}}</a></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewMyAccountingInfoPage) && authService.CanManageAnySevice()" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="authService.hasPermission(authService.permissionEnum.ViewMyAccountingInfoPage)" class="col-auto px-1"><a mat-button class="menu-item" routerLink="my-accounting" routerLinkActive="active">{{'APP.NAVIGATION.MY-ACCOUNTING' | translate}}</a></div>
+			<ng-container *ngIf="authService.hasPermission(authService.permissionEnum.ViewUsersPage) ||
+							authService.hasPermission(authService.permissionEnum.ViewUserRolePage) ||
+							authService.hasPermission(authService.permissionEnum.ViewServiceSyncPage)||
+							authService.hasPermission(authService.permissionEnum.ViewServiceResetEntrySyncPage)
+			">
+				<div class="col-auto p-0"><div class="menu-divider"></div></div>
+				<div class="col-auto px-1">
+					<button mat-button class="menu-item" [routerLinkActive]="['user-roles']" [mat-menu-trigger-for]="menu">{{'APP.NAVIGATION.ADMIN-TITLE' | translate}}
+						<mat-icon>keyboard_arrow_down</mat-icon>
+					</button>
+				</div>
+
+				<mat-menu x-position="before" #menu="matMenu">
+					<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUsersPage)" mat-menu-item routerLink="/users">{{'APP.NAVIGATION.USERS' | translate}}</a>
+					<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserRolePage)" mat-menu-item routerLink="/user-roles">{{'APP.NAVIGATION.USER-ROLES' | translate}}</a>
+					<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceSyncPage)" mat-menu-item routerLink="/service-syncs">{{'APP.NAVIGATION.SERVICE-SYNCS' | translate}}</a>
+					<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewServiceResetEntrySyncPage)" mat-menu-item routerLink="/service-reset-entry-syncs">{{'APP.NAVIGATION.SERVICE-RESET-ENTRY-SYNCS' | translate}}</a>
+				</mat-menu>
+			</ng-container>
+
+			<div *ngIf="this.installationConfigurationService.privacyStatementUrl" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="this.installationConfigurationService.privacyStatementUrl" class="col-auto px-1"><a mat-button class="menu-item" (click)="goToExternalLink(this.installationConfigurationService.privacyStatementUrl)">{{'APP.NAVIGATION.PRIVACY-STATEMENT' | translate}}</a></div>
+			<div *ngIf="this.installationConfigurationService.privacyStatementUrl" class="col-auto p-0"><div class="menu-divider"></div></div>
+			<div *ngIf="this.installationConfigurationService.termsOfUseUrl" class="col-auto px-1"><a mat-button class="menu-item" (click)="goToExternalLink(this.installationConfigurationService.termsOfUseUrl)">{{'APP.NAVIGATION.TERMS-OF-USE' | translate}}</a></div>
+		</div>
+	</div>
+	<div class="col"></div>
+
+	<div *ngIf="isAuthenticated()" class="col-auto">
+		<a *ngIf="authService.hasPermission(authService.permissionEnum.ViewUserProfilePage)" mat-button routerLink="/user-profile" [queryParams]="getUserProfileQueryParams()" routerLinkActive="active" class="user-label">
+			{{this.getPrincipalName()}}
+		</a>
+		<span class="user-label" *ngIf="!authService.hasPermission(authService.permissionEnum.ViewUserProfilePage)">{{this.getPrincipalName()}}</span>
+		<button mat-icon-button (click)="logout()">
+			<mat-icon>exit_to_app</mat-icon>
+		</button>
+	</div>
+</mat-toolbar>
+<div *ngIf="progressIndication" class="progress-bar">
+	<mat-progress-bar color="accent" mode="indeterminate"></mat-progress-bar>
+</div> -->
+
+<!-- before user info -->
+	<!-- <div class="col-auto">
+		<button mat-icon-button [matMenuTriggerFor]="themeMenu">
+			<mat-icon>format_color_fill</mat-icon>
+		</button>
+		<mat-menu #themeMenu="matMenu">
+			<button mat-menu-item (click)="onThemeSelected(themeTypes.Blue)">{{'APP.NAVIGATION.BLUE-THEME' | translate}}</button>
+			<button mat-menu-item (click)="onThemeSelected(themeTypes.Pink)">{{'APP.NAVIGATION.PINK-THEME' | translate}}</button>
+		</mat-menu>
+	</div>
+	<div class="col-auto">
+		<button mat-icon-button [matMenuTriggerFor]="languageMenu">
+			<mat-icon>language</mat-icon>
+		</button>
+		<mat-menu #languageMenu="matMenu">
+			<button mat-menu-item (click)="onLanguageSelected(languageTypes.English)">{{'APP.NAVIGATION.ENGLISH-LANGUAGE' | translate}}</button>
+			<button mat-menu-item (click)="onLanguageSelected(languageTypes.Greek)">{{'APP.NAVIGATION.GREEK-LANGUAGE' | translate}}</button>
+		</mat-menu>
+	</div> -->

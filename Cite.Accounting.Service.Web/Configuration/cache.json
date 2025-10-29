@@ -1,0 +1,14 @@
+{
+	"Cache": {
+		"Provider": {
+			//Possible values: "None","InProc","Redis"
+			"Type": "InProc"
+			//"Redis": {
+			//	"Options": {
+			//		"Configuration": null,
+			//		"InstanceName": null
+			//	}
+			//},
+		}
+	}
+}

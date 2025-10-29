@@ -1,0 +1,38 @@
+<div class="container-fluid">
+	<div *ngIf="formGroup" class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="row pt-4 pb-2"><div class="col"><app-navigation-breadcrumb></app-navigation-breadcrumb></div></div>
+
+			<mat-card class="mt-4 pt-2">
+				<mat-card-content>
+					<form (ngSubmit)="formSubmit()" [formGroup]="formGroup">
+						<div class="row">
+							<mat-form-field class="col-md-4">
+								<mat-label>{{'APP.USER-ROLE-EDITOR.FIELDS.NAME' | translate}}</mat-label>
+								<input matInput type="text" name="user-role-name" formControlName="name" required>
+								<mat-error *ngIf="formGroup.get('name').hasError('backendError')">{{formGroup.get('name').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('name').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<mat-label>{{'APP.USER-ROLE-EDITOR.FIELDS.PROPAGATE' | translate}}</mat-label>
+								<mat-select name="user-role-propagate" [formControl]="formGroup.get('propagate')" required>
+									<mat-option *ngFor="let propagateType of propagateTypeValues" [value]="propagateType">{{enumUtils.toPropagateTypeString(propagateType)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('propagate').hasError('backendError')">{{formGroup.get('propagate').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('propagate').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-12">
+								<mat-label>{{'APP.USER-ROLE-EDITOR.FIELDS.RIGHTS' | translate}}</mat-label>
+								<textarea rows="20" matInput name="user-role-rights" formControlName="rights" required></textarea>
+								<mat-error *ngIf="formGroup.get('rights').hasError('backendError')">{{formGroup.get('rights').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('rights').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+						<app-editor-actions-component [canDelete]="authService.hasPermission(authService.permissionEnum.DeleteUserRole) && !isDeleted && !isNew" [canSave]="authService.hasPermission(authService.permissionEnum.EditUserRole) && !isDeleted" (onDelete)="delete()" (onCancel)="cancel()" (onSave)="save()"></app-editor-actions-component>
+					</form>
+				</mat-card-content>
+			</mat-card>
+		</div>
+	</div>
+</div>

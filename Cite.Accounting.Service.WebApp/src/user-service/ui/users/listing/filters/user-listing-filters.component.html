@@ -1,0 +1,26 @@
+	<div class="row">
+
+		<div class="col">
+			<div class="row align-items-center">
+				<div class="col-auto mb-1">
+					<mat-slide-toggle [(ngModel)]="isActive">
+						<span class="toggle__text--important">{{'USER-SERVICE.USER-LISTING.FILTER.SHOW-INACTIVE' | translate}}</span>
+					</mat-slide-toggle>
+				</div>
+
+				<div class="col-auto">
+				<app-expandable-search-field [(value)]="filter.like" [disableTransform]="false" (valueChange)="onFilterChange()"></app-expandable-search-field>
+				</div>
+			</div>
+		</div>
+
+		<div class="col-auto mt-2">
+			<app-user-settings-selector 
+				[key]="key" 
+				[lookup]="lookup"
+				[editingFilter]="editingFilter"
+				[autoSelectUserSettings]="autoSelectUserSettings"
+				(onSettingSelected)="onSettingChange($event)" 
+			></app-user-settings-selector>
+		</div>
+	</div>

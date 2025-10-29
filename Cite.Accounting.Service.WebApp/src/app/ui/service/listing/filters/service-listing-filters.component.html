@@ -1,0 +1,60 @@
+<div class="row">
+	<div class="col">
+		<div class="row align-items-center">
+			@if (filterSelections['isActiveOption']) {
+				<div class="col-auto mb-1">
+					<mat-slide-toggle [(ngModel)]="isActive">
+						<span class="toggle__text--important">{{'APP.SERVICE-LISTING.FILTER.SHOW-INACTIVE' | translate}}</span>
+					</mat-slide-toggle>
+				</div>
+			}
+			<div class="col-auto">
+				<app-expandable-search-field [(value)]="filter.like" [disableTransform]="false" (valueChange)="onFilterChange()"></app-expandable-search-field>
+			</div>
+		</div>
+	</div>
+
+	<div class="p-0 col-auto mt-2">
+		<app-user-settings-selector 
+			[key]="key" 
+			[lookup]="lookup"
+			[editingFilter]="editingFilter"
+			[autoSelectUserSettings]="autoSelectUserSettings"
+			(onSettingSelected)="onSettingChange($event)" 
+		></app-user-settings-selector>
+	</div>
+	<div class="col-auto mt-2">
+		<button mat-icon-button
+			[matMenuTriggerFor]="filtersMenu"
+		>
+			<mat-icon aria-hidden="false"
+				[matBadgeHidden]="countOpenFilters() == 0" 
+				[matBadge]="countOpenFilters()"
+				overlap="false"
+				matBadgeColor="warn"
+			>filter_alt</mat-icon>
+		</button>
+	</div>
+</div>
+
+<mat-menu #filtersMenu="matMenu">
+	<div class="container-fluid">
+		<div class="row justify-content-between">
+			<div class="col-auto">
+				<button mat-button (click)="$event.stopPropagation(); selectAll()">
+					{{'APP.SERVICE-LISTING.FILTER.ALL-FILTERS' | translate}}
+				</button>
+			</div>
+			<div class="col-auto">
+				<button mat-button (click)="$event.stopPropagation(); deselectAll()">
+					{{'APP.SERVICE-LISTING.FILTER.NO-FILTERS' | translate}}
+				</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-12">
+				<mat-checkbox class="filter-option" [(ngModel)]="filterSelections['isActiveOption']" (ngModelChange)="checkBoxChanged($event, 'isActive')" (click)="$event.stopPropagation()">{{'APP.SERVICE-LISTING.FILTER.SHOW-INACTIVE' | translate}}</mat-checkbox>
+			</div>
+		</div>
+	</div>
+</mat-menu>

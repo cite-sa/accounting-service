@@ -1,0 +1,115 @@
+@use "@angular/material" as mat;
+@import './blue-theme.scss';
+
+
+// Import material
+@import '../node_modules/@swimlane/ngx-datatable/index.css';
+@import '../node_modules/@swimlane/ngx-datatable/themes/material.scss';
+@import '../node_modules/@swimlane/ngx-datatable/assets/icons.css';
+@import '../node_modules/@mat-datetimepicker/core/datetimepicker/datetimepicker-theme.scss';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+//Material-Bootstrap configuration
+@import "assets/scss/bootstrap-material";
+
+
+// Bootstrap Overrides
+
+.bootstrap-overrides {
+	
+	a {
+		text-decoration: none;
+		background-color: transparent;
+	}
+
+	a:hover {
+		font-weight: 500;
+		text-decoration: none;
+	}
+
+	label {
+		margin: 0;
+	}
+
+	.navbar {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+// Global Styling
+
+.activity-status {
+  border-radius: 10px;
+  letter-spacing: 0.11px;
+  font-weight: 400;
+  opacity: 1;
+  padding-left: 0.625rem;
+  padding-right: 0.625rem;
+  display: inline-block;
+  line-height: 1.5rem;
+}
+
+.activity-status--active {
+  color: #568b5a;
+  background: #9dd1a1 0% 0% no-repeat padding-box;
+}
+
+.activity-status--inactive {
+  color: #ff3d33;
+  background: #ffd5d3 0% 0% no-repeat padding-box;
+}
+
+.btn--neutral {
+	color: var(--neutral-10) !important;
+}
+
+.btn--shadow {
+	background-color: color-mix(in srgb, var(--sys-on-surface) 4%, transparent) !important;
+}
+
+.btn__internal-label {
+	border: 1px solid var(--sys-primary); 
+	padding: 2px 5px; 
+	border-radius: 7px; 
+	margin-right: 4px;
+}
+
+.editing-dot-indication {
+	height: 0.5rem;
+	width: .5rem;
+	background-color: var(--sys-primary);
+	border-radius: 50%;
+	display: inline-block;
+}
+
+.mdc-icon-button {
+	line-height: 1rem;
+}
+
+.toggle__text--important {
+	color: var(--neutral-10);
+	font-weight: 500;
+	letter-spacing: -0.02rem;
+}
+
+// Density
+.dense-1 {
+	@include mat.all-component-densities(-1);
+}
+
+.dense-2 {
+	@include mat.all-component-densities(-2);
+}
+
+.dense-3 {
+	@include mat.all-component-densities(-3);
+}
+
+.dense-4 {
+	@include mat.all-component-densities(-4);
+}
+
+.dense-10 {
+	@include mat.all-component-densities(-10); 
+}

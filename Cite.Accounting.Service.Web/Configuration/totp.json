@@ -1,0 +1,26 @@
+{
+	"Totp": {
+		"Filter": {
+			"IsMandatoryByDefault": false,
+			"TotpHeader": "totp"
+		},
+		"CiteAccountingIdpHttpService": {
+			"Enable": true,
+			"TargetUrl": "%{IdpUrl}%"
+		},
+		"CiteAccountingIdpTokenClient": {
+			"ClientSecret": "%{TheAPIClientSecret}%",
+			"IdpUrl": "%{IdpUrl}%",
+			"RequireHttps": "%{IdpRequireHttps}%",
+			"ClientId": "%{TheAPIId}%",
+			"IntrospectionSecret": null,
+			"TargetScope": [ "%{TheIdpAPIId}%" ],
+			"ServiceTokenCache": {
+				"Prefix": "%{CacheDisambiguation}%",
+				"KeyPattern": "{prefix}:Totp_IdpTokenClient_ServiceToken:{clientId}:{scopes}:v0",
+				//30 minutes in seconds = 3600. This should optimally be larger than the access token lifetime
+				"AbsoluteExpirationSeconds": 3600
+			}
+		}
+	}
+}

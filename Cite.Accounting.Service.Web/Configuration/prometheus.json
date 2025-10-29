@@ -1,0 +1,6 @@
+{
+	"Prometheus": {
+		"Enable": "%{PrometheusEnabled}%",
+		"AccountingServiceCode": "%{PrometheusAccountingServiceCode}%"
+	}
+}

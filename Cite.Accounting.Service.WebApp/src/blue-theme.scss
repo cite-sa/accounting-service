@@ -1,0 +1,269 @@
+@use 'sass:map';
+@use "@angular/material" as mat;
+// @use '@angular/material-experimental' as matx;
+@include mat.core();
+
+:root {
+	--primary-0: #000000;
+	--primary-10: #001849;
+	--primary-20: #002B75;
+	--primary-25: #00358C;
+	--primary-30: #003FA3;
+	--primary-35: #004ABC;
+	--primary-40: #0155D5;
+	--primary-50: #356FEF;
+	--primary-60: #5D8BFF;
+	--primary-70: #8AA8FF;
+	--primary-80: #B3C5FF;
+	--primary-90: #DAE1FF;
+	--primary-95: #EEF0FF;
+	--primary-98: #FAF8FF;
+	--primary-99: #FEFBFF;
+	--primary-100: #FFFFFF;
+
+	--secondary-0: #000000;
+	--secondary-10: #251A00;
+	--secondary-20: #3E2E00;
+	--secondary-25: #4B3900;
+	--secondary-30: #594400;
+	--secondary-35: #684F00;
+	--secondary-40: #765A00;
+	--secondary-50: #947200;
+	--secondary-60: #B48B00;
+	--secondary-70: #D4A500;
+	--secondary-80: #F3BF23;
+	--secondary-90: #FFDF95;
+	--secondary-95: #FFEFD1;
+	--secondary-98: #FFF8F1;
+	--secondary-99: #FFFBFF;
+	--secondary-100: #FFFFFF;
+
+	--tertiary-0: #000000;
+	--tertiary-10: #40000F;
+	--tertiary-20: #67001D;
+	--tertiary-25: #770E27;
+	--tertiary-30: #871C31;
+	--tertiary-35: #97293C;
+	--tertiary-40: #A73547;
+	--tertiary-50: #C84D5F;
+	--tertiary-60: #E96677;
+	--tertiary-70: #FF8794;
+	--tertiary-80: #FFB2B8;
+	--tertiary-90: #FFDADB;
+	--tertiary-95: #FFECED;
+	--tertiary-98: #FFF8F7;
+	--tertiary-99: #FFFBFF;
+	--tertiary-100: #FFFFFF;
+
+	--neutral-0: #000000;
+	--neutral-4: #000000;
+	--neutral-6: #000000;
+	--neutral-10: #1C1B1B;
+	--neutral-12: #1C1B1B;
+	--neutral-20: #313030;
+	--neutral-22: #313030;
+	--neutral-24: #313030;
+	--neutral-25: #3C3B3B;
+	--neutral-30: #484646;
+	--neutral-35: #535252;
+	--neutral-40: #5F5E5E;
+	--neutral-50: #787776;
+	--neutral-60: #929090;
+	--neutral-70: #ADAAAA;
+	--neutral-80: #C9C6C5;
+	--neutral-87: #C9C6C5;
+	--neutral-90: #E5E2E1;
+	--neutral-92: #E5E2E1;
+	--neutral-94: #E5E2E1;
+	--neutral-95: #F4F0EF;
+	--neutral-96: #F4F0EF;
+	--neutral-98: #FCF8F8;
+	--neutral-99: #FCFCFF;
+	--neutral-100: #FFFFFF;
+
+	--neutral-variant-0: #000000;
+	--neutral-variant-10: #1C1B1C;
+	--neutral-variant-20: #313031;
+	--neutral-variant-25: #3C3B3C;
+	--neutral-variant-30: #474647;
+	--neutral-variant-35: #535253;
+	--neutral-variant-40: #5F5E5F;
+	--neutral-variant-50: #787777;
+	--neutral-variant-60: #929091;
+	--neutral-variant-70: #ADAAAB;
+	--neutral-variant-80: #C9C6C6;
+	--neutral-variant-90: #E5E2E2;
+	--neutral-variant-95: #F3F0F0;
+	--neutral-variant-98: #FCF8F9;
+	--neutral-variant-99: #FEFBFF;
+	--neutral-variant-100: #FFFFFF;
+
+	--error-0: #000000;
+	--error-10: #410002;
+	--error-20: #690005;
+	--error-25: #7e0007;
+	--error-30: #93000a;
+	--error-35: #a80710;
+	--error-40: #ba1a1a;
+	--error-50: #de3730;
+	--error-60: #ff5449;
+	--error-70: #ff897d;
+	--error-80: #ffb4ab;
+	--error-90: #ffdad6;
+	--error-95: #ffedea;
+	--error-98: #fff8f7;
+	--error-99: #fffbff;
+	--error-100: #ffffff;
+}
+
+$_palettes: (
+	primary: (
+		0: var(--primary-0),
+		10: var(--primary-10),
+		20: var(--primary-20),
+		25: var(--primary-25),
+		30: var(--primary-30),
+		35: var(--primary-35),
+		40: var(--primary-40),
+		50: var(--primary-50),
+		60: var(--primary-60),
+		70: var(--primary-70),
+		80: var(--primary-80),
+		90: var(--primary-90),
+		95: var(--primary-95),
+		98: var(--primary-98),
+		99: var(--primary-99),
+		100: var(--primary-100)),
+	secondary: (
+		0: var(--secondary-0),
+		10: var(--secondary-10),
+		20: var(--secondary-20),
+		25: var(--secondary-25),
+		30: var(--secondary-30),
+		35: var(--secondary-35),
+		40: var(--secondary-40),
+		50: var(--secondary-50),
+		60: var(--secondary-60),
+		70: var(--secondary-70),
+		80: var(--secondary-80),
+		90: var(--secondary-90),
+		95: var(--secondary-95),
+		98: var(--secondary-98),
+		99: var(--secondary-99),
+		100: var(--secondary-100)),
+	tertiary: (
+		0: var(--tertiary-0),
+		10: var(--tertiary-10),
+		20: var(--tertiary-20),
+		25: var(--tertiary-25),
+		30: var(--tertiary-30),
+		35: var(--tertiary-35),
+		40: var(--tertiary-40),
+		50: var(--tertiary-50),
+		60: var(--tertiary-60),
+		70: var(--tertiary-70),
+		80: var(--tertiary-80),
+		90: var(--tertiary-90),
+		95: var(--tertiary-95),
+		98: var(--tertiary-98),
+		99: var(--tertiary-99),
+		100: var(--tertiary-100)),
+	neutral: (
+		0: var(--neutral-0),
+		4: var(--neutral-4),
+		6: var(--neutral-6),
+		10: var(--neutral-10),
+		12: var(--neutral-12),
+		17: var(--neutral-17),
+		20: var(--neutral-20),
+		22: var(--neutral-22),
+		24: var(--neutral-24),
+		25: var(--neutral-25),
+		30: var(--neutral-30),
+		35: var(--neutral-35),
+		40: var(--neutral-40),
+		50: var(--neutral-50),
+		60: var(--neutral-60),
+		70: var(--neutral-70),
+		80: var(--neutral-80),
+		87: var(--neutral-87),
+		90: var(--neutral-90),
+		92: var(--neutral-92),
+		94: var(--neutral-94),
+		95: var(--neutral-95),
+		96: var(--neutral-96),
+		98: var(--neutral-98),
+		99: var(--neutral-99),
+		100: var(--neutral-100)),
+	neutral-variant: (
+		0: var(--neutral-variant-0),
+		10: var(--neutral-variant-10),
+		20: var(--neutral-variant-20),
+		25: var(--neutral-variant-25),
+		30: var(--neutral-variant-30),
+		35: var(--neutral-variant-35),
+		40: var(--neutral-variant-40),
+		50: var(--neutral-variant-50),
+		60: var(--neutral-variant-60),
+		70: var(--neutral-variant-70),
+		80: var(--neutral-variant-80),
+		90: var(--neutral-variant-90),
+		95: var(--neutral-variant-95),
+		98: var(--neutral-variant-98),
+		99: var(--neutral-variant-99),
+		100: var(--neutral-variant-100)),
+	error: (
+		0: var(--error-0),
+		10: var(--error-10),
+		20: var(--error-20),
+		25: var(--error-25),
+		30: var(--error-30),
+		35: var(--error-35),
+		40: var(--error-40),
+		50: var(--error-50),
+		60: var(--error-60),
+		70: var(--error-70),
+		80: var(--error-80),
+		90: var(--error-90),
+		95: var(--error-95),
+		98: var(--error-98),
+		99: var(--error-99),
+		100: var(--error-100))
+);
+
+$_rest: (
+	secondary: map.get($_palettes, secondary),
+	neutral: map.get($_palettes, neutral),
+	neutral-variant: map.get($_palettes, neutral-variant),
+	error: map.get($_palettes, error),
+);
+$_primary: map.merge(map.get($_palettes, primary), $_rest);
+$_tertiary: map.merge(map.get($_palettes, tertiary), $_rest);
+
+// Define the theme object.
+$light-theme: mat.define-theme(
+  (
+    color: (
+      theme-type: light,
+      primary: $_primary,
+      tertiary: $_tertiary,
+      use-system-variables: true,
+    ),
+    typography: (
+      use-system-variables: true,
+    ),
+    density: (
+      scale: 0,
+    ),
+  )
+);
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+:root {
+  @include mat.all-component-themes($light-theme);
+  @include mat.system-level-colors($light-theme);
+  @include mat.system-level-typography($light-theme);
+}
+@include mat.typography-hierarchy($light-theme);

@@ -1,0 +1,89 @@
+{
+	"Queue": {
+		"Task": {
+			"Listener": {
+				"Enable": true,
+				"HostName": "%{RabbitMQHostName}%",
+				"Port": "%{RabbitMQPort}%",
+				"Username": "%{RabbitMQUsername}%",
+				"Password": "%{RabbitMQPassword}%",
+				"Exchange": null,
+				"Durable": null,
+				"QosPrefetchSize": 0,
+				"QosPrefetchCount": 1,
+				"QosGlobal": false,
+				"IntervalSeconds": 5,
+				"ConnectionRecovery": {
+					"Enabled": true,
+					"NetworkRecoveryInterval": 5000,
+					"UnreachableRecoveryInterval": 5000
+				},
+				"Options": {
+					//The number of retries for each notification
+					"RetryThreashold": 20,
+					//How much time to wait for each retry. The actual time will be accumulated based on previous retries. 
+					//A random number between 50% - 100% of the latest accumulation is calcualted for each new try.
+					//The MaxRetryDelaySeconds option puts a cap in the increments
+					//5 minutes = 300 seconds
+					"RetryDelayStepSeconds": 20,
+					//For each accumulating delay step, this put a cap in the additional time to delay the retry
+					//If notification has not been retried for more than this setting, a retry will be fired
+					//10 minutes in seconds = 600
+					"MaxRetryDelaySeconds": 600,
+					//If a notification has been created more than this time ago, do not send
+					"TooOldToSendSeconds": 604800
+				},
+				"QueueName": null,
+				"UserTouchedTopic": null,
+				"UserRemovalTopic": null,
+				"AccountingEntryCreatedTopic": null,
+				"TenantCreationTopic": null,
+				"TenantRemovalTopic": null,
+				"ForgetMeRequestTopic": null,
+				"ForgetMeRevokeTopic": null,
+				"WhatYouKnowAboutMeRequestTopic": null,
+				"WhatYouKnowAboutMeRevokeTopic": null,
+				"DefaultUserLocaleChangedTopic": null,
+				"DefaultUserLocaleRemovedTopic": null,
+				"APIKeyStaleTopic": null
+			},
+			"Publisher": {
+				"Enable": true,
+				"HostName": "%{RabbitMQHostName}%",
+				"Port": "%{RabbitMQPort}%",
+				"Username": "%{RabbitMQUsername}%",
+				"Password": "%{RabbitMQPassword}%",
+				"Exchange": null,
+				"Durable": null,
+				"IntervalSeconds": 5,
+				"HandleAckRetries": 4,
+				"HandleNackRetries": 4,
+				"Options": {
+					//The number of retries for each notification
+					"RetryThreashold": 20,
+					//How much time to wait for each retry. The actual time will be accumulated based on previous retries. 
+					//A random number between 50% - 100% of the latest accumulation is calcualted for each new try.
+					//The MaxRetryDelaySeconds option puts a cap in the increments
+					//5 minutes = 300 seconds
+					"RetryDelayStepSeconds": 20,
+					//For each accumulating delay step, this put a cap in the additional time to delay the retry
+					//If notification has not been retried for more than this setting, a retry will be fired
+					//10 minutes in seconds = 600
+					"MaxRetryDelaySeconds": 600,
+					//If a notification has been created more than this time ago, do not send
+					"TooOldToSendSeconds": 604800,
+					//If a publisher confirm has been lost, retry
+					"ConfirmTimeoutSeconds": 30
+				},
+				"ConnectionRecovery": {
+					"Enabled": true,
+					"NetworkRecoveryInterval": 5000,
+					"UnreachableRecoveryInterval": 5000
+				},
+				"AppId": "%{TheAPIId}%",
+				"ForgetMeCompletedTopic": null,
+				"WhatYouKnowAboutMeCompletedTopic": null
+			}
+		}
+	}
+}

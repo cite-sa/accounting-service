@@ -1,0 +1,22 @@
+
+<div class="d-flex align-items-center">
+  <ng-container *ngFor="let breadcrumbItem of breadcrumbs; let index = index; first as isFirst; last as isLast">
+      <ng-container *ngIf="breadcrumbItem.title == HOME_SYMBOL">
+        <ng-container *ngTemplateOutlet="home; context: { isLast }"></ng-container>
+      </ng-container>
+      
+      <ng-container *ngIf="breadcrumbItem.title != HOME_SYMBOL">
+        <button mat-button class="btn--neutral" [disabled]="isLast || breadcrumbItem.skipNavigation" [routerLink]="computePath(index)">{{ breadcrumbItem.title  | translate:breadcrumbItem.translateParams }}</button>
+        <mat-icon *ngIf="!isLast" class="divider-nav dense-4">chevron_right</mat-icon>        
+      </ng-container>
+  </ng-container>
+</div>
+
+
+
+<ng-template #home let-isLast="isLast">
+
+  <button mat-icon-button [routerLink]="'/'" class="dense-4" [disabled]="isLast"><mat-icon>home</mat-icon></button>
+  <mat-icon *ngIf="!isLast" class="divider-nav dense-4">chevron_right</mat-icon>
+
+</ng-template>

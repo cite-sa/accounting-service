@@ -1,0 +1,14 @@
+<div class="container-fluid bootstrap-overrides">
+	<app-navbar></app-navbar>
+	<mat-sidenav-container fullscreen class="main-container">
+		<mat-sidenav #sidenav mode="side" opened class="sidenav" [fixedInViewport]="true" [fixedTopGap]="80">
+			<app-sidebar></app-sidebar>
+		</mat-sidenav>
+
+		<mat-sidenav-content class="sidenav-content">
+			<router-outlet></router-outlet>
+		</mat-sidenav-content>
+	</mat-sidenav-container>
+
+	<app-ui-notification></app-ui-notification>
+</div>

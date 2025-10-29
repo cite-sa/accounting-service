@@ -1,0 +1,48 @@
+<div class="container-fluid">
+	<div *ngIf="formGroup" class="row">
+		<div class="col-md-8 offset-md-2">
+			<div class="row pt-4 pb-2"><div class="col"><app-navigation-breadcrumb></app-navigation-breadcrumb></div></div>
+
+			<mat-card class="mt-4 pt-2">
+				<mat-card-content>
+					<form (ngSubmit)="formSubmit()" [formGroup]="formGroup">
+						<div class="row">
+							<mat-form-field class="col-md-4">
+								<app-single-auto-complete placeholder="{{'APP.SERVICE-RESET-ENTRY-SYNC-EDITOR.FIELDS.SERVICE' | translate}}" formControlName="service" [configuration]="singleServiceAutocompleteConfiguration" required>
+								</app-single-auto-complete>
+								<mat-error *ngIf="formGroup.get('service').hasError('backendError')">{{formGroup.get('service').getError('backendError')?.message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('service').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+							<mat-form-field class="col-md-4">
+								<mat-label>{{'APP.SERVICE-RESET-ENTRY-SYNC-EDITOR.FIELDS.STATUS' | translate}}</mat-label>
+								<mat-select name="service-reset-entry-sync-status" [formControl]="formGroup.get('status')" required>
+									<mat-option *ngFor="let serviceSyncStatusValues of serviceSyncStatusValues" [value]="serviceSyncStatusValues">{{enumUtils.toServiceSyncStatusString(serviceSyncStatusValues)}}
+									</mat-option>
+								</mat-select>
+								<mat-error *ngIf="formGroup.get('status').hasError('backendError')">{{formGroup.get('status').getError('backendError').message}}</mat-error>
+								<mat-error *ngIf="formGroup.get('status').hasError('required')">{{'COMMONS.VALIDATION.REQUIRED' | translate}}</mat-error>
+							</mat-form-field>
+						</div>
+						<div class="row" *ngIf="!isNew" class="row">
+							<span class="col-md-12">
+								{{'APP.SERVICE-RESET-ENTRY-SYNC-EDITOR.FIELDS.LAST-SYNC-AT' | translate}}: {{formGroup.get('lastSyncAt').value | date: 'short' }}
+							</span>
+						</div>
+						<div class="row" *ngIf="!isNew" class="row">
+							<span class="col-md-12">
+								{{'APP.SERVICE-RESET-ENTRY-SYNC-EDITOR.FIELDS.LAST-SYNC-ENTRY-TIMESTAMP-AT' | translate}}: {{formGroup.get('lastSyncEntryTimestamp').value | date:
+								'short' }}
+							</span>
+						</div>
+						<div class="row" *ngIf="!isNew" class="row">
+							<span class="col-md-12">
+								{{'APP.SERVICE-RESET-ENTRY-SYNC-EDITOR.FIELDS.LAST-SYNC-ENTRY-ID' | translate}}: {{formGroup.get('lastSyncEntryId').value}}
+							</span>
+						</div>
+						<app-editor-actions-component [canDelete]="authService.hasPermission(authService.permissionEnum.DeleteServiceResetEntrySync) && !isDeleted && !isNew" [canSave]="authService.hasPermission(authService.permissionEnum.EditServiceResetEntrySync) && !isDeleted" (onDelete)="delete()" (onCancel)="cancel()" (onSave)="save()"></app-editor-actions-component>
+					</form>
+				</mat-card-content>
+			</mat-card>
+		</div>
+	</div>
+</div>

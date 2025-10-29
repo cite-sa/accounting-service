@@ -1,0 +1,179 @@
+{
+	"Serilog": {
+		"Properties": {
+			//The name of the service so that in a shared log sink we can distinguish where each entry is from
+			"Application": "%{LogAsApplication}%",
+			"Scope": 0
+		},
+		"MinimumLevel": {
+			"Default": "%{DefaultLogLevel}%",
+			"Override": {
+				//set to "Information" level to see sql commands
+				"Microsoft.EntityFrameworkCore.Database.Command": "Warning",
+				//"Microsoft.EntityFrameworkCore.Database.Command": "Information",
+				"Microsoft": "Warning",
+				"IdentityServer4": "Warning",
+				"Cite.Accounting.Service": "%{DefaultLogLevel}%",
+				"Cite": "Warning",
+				"audit": "Information"
+			}
+		},
+		"WriteTo:LoggingSublogger": {
+			"Name": "Logger",
+			"Args": {
+				"configureLogger": {
+					"WriteTo": [
+						{
+							"Name": "Async",
+							"Args": {
+								"bufferSize": 10000,
+								"blockWhenFull": true,
+								"configure": [
+									{
+										"Name": "File",
+										"Args": {
+											"path": "%{LogsPath}%/logging.json",
+											//1G = 1073741824 bytes
+											"fileSizeLimitBytes": 1073741824,
+											"rollOnFileSizeLimit ": true,
+											"rollingInterval": "Day",
+											"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+											//15 days or 15G worth of logs
+											"retainedFileCountLimit": "%{LogRetainedFileCountLimit}%"
+										}
+									}
+								]
+							}
+						}
+					],
+					"Filter": [
+						{
+							"Name": "ByIncludingOnly",
+							"Args": { "expression": "@p['Scope'] = '0'" }
+						}
+					]
+				}
+			}
+		},
+		"WriteTo:AuditSublogger": {
+			"Name": "Logger",
+			"Args": {
+				"configureLogger": {
+					"WriteTo": [
+						{
+							"Name": "Async",
+							"Args": {
+								"bufferSize": 10000,
+								"blockWhenFull": true,
+								"configure": [
+									{
+										"Name": "File",
+										"Args": {
+											"path": "%{LogsPath}%/audit.json",
+											//1G = 1073741824 bytes
+											"fileSizeLimitBytes": 1073741824,
+											"rollOnFileSizeLimit ": true,
+											"rollingInterval": "Day",
+											"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+											//15 days or 15G worth of logs
+											"retainedFileCountLimit": "%{LogRetainedFileCountLimit}%"
+										}
+									}
+								]
+							}
+						}
+					],
+					"Filter": [
+						{
+							"Name": "ByIncludingOnly",
+							"Args": { "expression": "@p['Scope'] = '1'" }
+						}
+					]
+				},
+				"restrictedToMinimumLevel": "Information"
+			}
+		},
+		"WriteTo:identityTrackingSublogger": {
+			"Name": "Logger",
+			"Args": {
+				"configureLogger": {
+					"WriteTo": [
+						{
+							"Name": "Async",
+							"Args": {
+								"bufferSize": 10000,
+								"blockWhenFull": true,
+								"configure": [
+									{
+										"Name": "File",
+										"Args": {
+											"path": "%{LogsPath}%/identity-tracking.json",
+											//1G = 1073741824 bytes
+											"fileSizeLimitBytes": 1073741824,
+											"rollOnFileSizeLimit ": true,
+											"rollingInterval": "Day",
+											"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+											//15 days or 15G worth of logs
+											"retainedFileCountLimit": "%{LogRetainedFileCountLimit}%"
+										}
+									}
+								]
+							}
+						}
+					],
+					"Filter": [
+						{
+							"Name": "ByIncludingOnly",
+							"Args": { "expression": "@p['Scope'] = '2'" }
+						}
+					]
+				},
+				"restrictedToMinimumLevel": "Information"
+			}
+		},
+		"WriteTo:TrackingSublogger": {
+			"Name": "Logger",
+			"Args": {
+				"configureLogger": {
+					"WriteTo": [
+						{
+							"Name": "Async",
+							"Args": {
+								"bufferSize": 10000,
+								"blockWhenFull": true,
+								"configure": [
+									{
+										"Name": "File",
+										"Args": {
+											"path": "%{LogsPath}%/tracing.json",
+											//1G = 1073741824 bytes
+											"fileSizeLimitBytes": 1073741824,
+											"rollOnFileSizeLimit ": true,
+											"rollingInterval": "Day",
+											"formatter": "Serilog.Formatting.Compact.CompactJsonFormatter, Serilog.Formatting.Compact",
+											//15 days or 15G worth of logs
+											"retainedFileCountLimit": "%{LogRetainedFileCountLimit}%"
+										}
+									}
+								]
+							}
+						}
+					],
+					"Filter": [
+						{
+							"Name": "ByIncludingOnly",
+							"Args": { "expression": "@p['Scope'] = '3'" }
+						}
+					]
+				},
+				"restrictedToMinimumLevel": "Information"
+			}
+		},
+		"Enrich": [ "FromLogContext", "WithMachineName", "WithProcessId", "WithThreadId" ]
+	},
+	//Additional Logging options
+	"Logging": {
+		//if you specify that you want sql commands to be logged, setting this to true will also log the parameter values
+		"EFParameterLogging": false
+	}
+}
